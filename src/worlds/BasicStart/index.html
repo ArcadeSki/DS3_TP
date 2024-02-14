@@ -24,33 +24,30 @@
         <!-- Circles' built-in manager and avatar [REQUIRED] -->
         <circles-manager-avatar/>
 
-        <!-- the pickup objects need "circles-artefact" -->
+        <!-- no idea how to fix the rotation issue -->
         <a-entity geometry="primitive:box; width:0.6; depth:0.6; height:1;" position="0 0.5 -4">
           <a-entity id='ball' class="interactive" geometry="primitive:box; radius:0.5;"
-                    position="0 0.7 0" scale="0.2 0.2 0.2"
-                    circles-artefact="inspectScale:0.5 0.5 0.5;
-                                      label_offset:0 0.5 0; arrow_position:down;
-                                      descriptionLookAt:true;
-                                      title:cube;
-                                      description:This is a cube.;
-                                      label_text:cube;"></a-entity>
-          </a-entity>
+                    position="0 0.7 0" circles-pickup-object="pickupPosition:0 0 -2;
+                                                              pickupScale:1 1 1;
+                                                              dropScale:1 1 1; 
+                                                              animate:true;"></a-entity>
+        </a-entity>
 
-          <a-entity id="spawnPoint" position="4.2 0.05 0.0"></a-entity>
+        <a-entity id="spawnPoint" position="4.2 0.05 0.0"></a-entity>
 
-          <!-- the teleport circles on the ground -->
-          <a-entity circles-checkpoint circles-spawnpoint position="0 0.05 -3"></a-entity>
-          <a-entity circles-checkpoint circles-spawnpoint position="5 0.05 -4"></a-entity>
-          <a-entity circles-checkpoint circles-spawnpoint position="5 0.05 4"></a-entity>
-          <a-entity circles-checkpoint circles-spawnpoint position="-4 0.05 -5"></a-entity>
-          <a-entity circles-checkpoint circles-spawnpoint position="-4 0.05 5"></a-entity>
+        <!-- the teleport circles on the ground -->
+        <a-entity circles-checkpoint circles-spawnpoint position="0 0.05 -3"></a-entity>
+        <a-entity circles-checkpoint circles-spawnpoint position="5 0.05 -4"></a-entity>
+        <a-entity circles-checkpoint circles-spawnpoint position="5 0.05 4"></a-entity>
+        <a-entity circles-checkpoint circles-spawnpoint position="-4 0.05 -5"></a-entity>
+        <a-entity circles-checkpoint circles-spawnpoint position="-4 0.05 5"></a-entity>
 
 
         <a-entity id="walls" rotation="0 0 0">
-          <a-entity class="wall" geometry="primitive:box; width:18; height:5; depth:0.5" material="color:rgb(190,200,110);" position="9 0.5 0"  rotation="0 -90 0" ></a-entity>
-          <a-entity class="wall" geometry="primitive:box; width:18; height:5; depth:0.5" material="color:rgb(190,200,110);" position="-9 0.5 0"  rotation="0 90 0" ></a-entity>
-          <a-entity class="wall" geometry="primitive:box; width:18; height:5; depth:0.5" material="color:rgb(190,200,110);" position="0 0.5 9"  rotation="0 0 0" ></a-entity>
-          <a-entity class="wall" geometry="primitive:box; width:18; height:5; depth:0.5" material="color:rgb(190,200,110);" position="0 0.5 -9"  rotation="0 180 0" ></a-entity>
+          <a-entity class="wall" geometry="primitive:box; width:18; height:5; depth:0.5" material="color:rgb(190,200,110);" position="9 2 0"  rotation="0 -90 0" ></a-entity>
+          <a-entity class="wall" geometry="primitive:box; width:18; height:5; depth:0.5" material="color:rgb(190,200,110);" position="-9 2 0"  rotation="0 90 0" ></a-entity>
+          <a-entity class="wall" geometry="primitive:box; width:18; height:5; depth:0.5" material="color:rgb(190,200,110);" position="0 2 9"  rotation="0 0 0" ></a-entity>
+          <a-entity class="wall" geometry="primitive:box; width:18; height:5; depth:0.5" material="color:rgb(190,200,110);" position="0 2 -9"  rotation="0 180 0" ></a-entity>
         </a-entity>
 
         <a-entity environment="preset: default"></a-entity>
