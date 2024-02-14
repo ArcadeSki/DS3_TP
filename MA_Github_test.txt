@@ -1,1 +1,29 @@
-I am testing if i can upload correctly woot woot
+yo here are some instructions if you cant find them in "readMe.md"
+
+--TO INSTALL--
+
+apparently you need mongodb and python?
+
+    --using VS code terminal--
+1. "npm install --save"
+2. "cp .env.dist .env"
+3. "npm run serve"
+4. open browser ==> "localhost:1111"
+
+then go to "localhost:1111" or whatever port it says in the terminal
+
+5. login using email:"s1@circlesxr.com" & password:"password" ==> you can use s2 and s3 also.
+
+6.done
+
+--TO UPDATE THE WEBSITE--
+1. "localhost:111/logout"
+2. "localhost:1111/add-all-test-data"
+
+you will probably be disconnected from the server so you should go back to the terminal and check
+
+3. "npm run serve"
+4. open browser ==> "localhost:1111"
+5. login using email:"s1@circlesxr.com" & password:"password" ==> you can use s2 and s3 also.
+
+6. updated probably
