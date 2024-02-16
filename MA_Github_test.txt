@@ -17,7 +17,7 @@ then go to "localhost:1111" or whatever port it says in the terminal
 6.done
 
 --TO UPDATE THE WEBSITE--
-1. "localhost:111/logout"
+1. Originally, I said you needed to lgout but I was wrong.
 2. "localhost:1111/add-all-test-data"
 
 you will probably be disconnected from the server so you should go back to the terminal and check

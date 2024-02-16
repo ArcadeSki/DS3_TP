@@ -4,7 +4,6 @@
 
     <!-- Circles' head scripts [REQUIRED] -->
     <circles-start-scripts/>
-      <script src="https://unpkg.com/aframe-environment-component@1.3.3/dist/aframe-environment-component.min.js"></script>
 
   </head>
   <body>
@@ -14,6 +13,8 @@
       <!-- a-scene with 'circles-properties' component [REQUIRED] -->
       <a-scene circles_scene_properties>
         <a-assets>
+
+          <a-asset-item id="museum" response-type="arraybuffer" src="/worlds/BasicStart/assets/InnovationLab_rebuild_v008.glb"></a-asset-item>
 
           <!-- Circles' built-in assets [REQUIRED] -->
           <circles-assets/>
@@ -25,33 +26,20 @@
         <circles-manager-avatar/>
 
         <!-- no idea how to fix the rotation issue -->
-        <a-entity geometry="primitive:box; width:0.6; depth:0.6; height:1;" position="0 0.5 -4">
-          <a-entity id='ball' class="interactive" geometry="primitive:box; radius:0.5;"
-                    position="0 0.7 0" circles-pickup-object="pickupPosition:0 0 -2;
-                                                              pickupScale:1 1 1;
-                                                              dropScale:1 1 1; 
-                                                              animate:true;"></a-entity>
-        </a-entity>
-
-        <a-entity id="spawnPoint" position="4.2 0.05 0.0"></a-entity>
+        <a-entity id='item' class="interactive" geometry="primitive:box; radius:0.5;"
+                  position="-6 1.6 -3" material="color:rgb(200, 50, 255)" 
+                  circles-pickup-object=" pickupPosition:0 0 -2;
+                                          pickupScale:1 1 1;
+                                          dropScale:1 1 1; 
+                                          animate:true;"></a-entity>
 
         <!-- the teleport circles on the ground -->
-        <a-entity circles-checkpoint circles-spawnpoint position="0 0.05 -3"></a-entity>
-        <a-entity circles-checkpoint circles-spawnpoint position="5 0.05 -4"></a-entity>
-        <a-entity circles-checkpoint circles-spawnpoint position="5 0.05 4"></a-entity>
-        <a-entity circles-checkpoint circles-spawnpoint position="-4 0.05 -5"></a-entity>
-        <a-entity circles-checkpoint circles-spawnpoint position="-4 0.05 5"></a-entity>
+        <a-entity circles-checkpoint circles-spawnpoint position="-2 0 -10"></a-entity>
+        <a-entity circles-checkpoint position="-4 0 -3"></a-entity>
+        <a-entity circles-checkpoint position="-6 0 -15"></a-entity>
+        <a-entity circles-checkpoint position="-3 0 5"></a-entity>
 
-
-        <a-entity id="walls" rotation="0 0 0">
-          <a-entity class="wall" geometry="primitive:box; width:18; height:5; depth:0.5" material="color:rgb(190,200,110);" position="9 2 0"  rotation="0 -90 0" ></a-entity>
-          <a-entity class="wall" geometry="primitive:box; width:18; height:5; depth:0.5" material="color:rgb(190,200,110);" position="-9 2 0"  rotation="0 90 0" ></a-entity>
-          <a-entity class="wall" geometry="primitive:box; width:18; height:5; depth:0.5" material="color:rgb(190,200,110);" position="0 2 9"  rotation="0 0 0" ></a-entity>
-          <a-entity class="wall" geometry="primitive:box; width:18; height:5; depth:0.5" material="color:rgb(190,200,110);" position="0 2 -9"  rotation="0 180 0" ></a-entity>
-        </a-entity>
-
-        <a-entity environment="preset: default"></a-entity>
-
+        <a-entity id="museum_room" position="2 0 0" scale="1.5 1.5 1.5" gltf-model="#museum"></a-entity>
       </a-scene>
 
     <!-- Circles' end scripts [REQUIRED] -->
