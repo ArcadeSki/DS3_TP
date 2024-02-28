@@ -45,6 +45,15 @@
                           description:This object is a placeholder for what will be added. Information about it will replace this text.; 
                           label_text:Example   Object;"></a-entity>
 
+  <!-- move to other worlds ==> circles-portal="img_src:(the image in the portal); title_text:title; link_url:/w/(the world folder)"
+        the text has back-face culling -->
+
+  <!--  EXAMPLE: circles-portal="img_src:#link_2_360; title_text:In The Classroom; link_url:/w/WIT_2_Lab"
+        you go to the index.html file in the "WIT_2_Lab" folder. No idea what "/w/" is meant to do. The parent folder is 'worlds' -->
+        <a-entity id="Quebec"
+                position="-5 1.5 4" rotation="0 90 0" scale="1 1 1"
+                circles-portal="title_text:Quebec; link_url:/w/WIT_1_Kitchen"></a-entity>
+
         <!-- the teleport circles on the ground -->
         <a-entity circles-checkpoint circles-spawnpoint position="-2 0 -10"></a-entity>
         <a-entity circles-checkpoint position="-4 0 -3"></a-entity>
