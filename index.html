@@ -1,0 +1,70 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+
+    <!-- Circles' head scripts [REQUIRED] -->
+    <circles-start-scripts/>
+
+    <script src="/global/js/libs/aframe-physics-system.min.js"></script>
+    <script src="/worlds/BasicStart/components/physics-object.js"></script>
+    <script src="/worlds/BasicStart/components/collision-indicator.js"></script>
+
+  </head>
+  <body>
+    <!-- this is used to create our enter UI that creates a 2D overlay to capture a user gesture for sound/mic access etc. -->
+    <circles-start-ui/>
+
+      <!-- a-scene with 'circles-properties' component [REQUIRED] -->
+      <a-scene circles_scene_properties physics="gravity:-9.8;">
+        <a-assets>
+
+          <a-asset-item id="museum" response-type="arraybuffer" src="/worlds/BasicStart/assets/InnovationLab_rebuild_v008.glb"></a-asset-item>
+
+          <!-- Circles' built-in assets [REQUIRED] -->
+          <circles-assets/>
+        </a-assets>
+
+        <!-- WORLD GOES HERE -->
+
+        <!-- Circles' built-in manager and avatar [REQUIRED] -->
+        <circles-manager-avatar/>
+
+        <!-- the drop rotation has a decimal because '0 0 0' does not set it back to normal -->
+        <a-entity id='pickup' class="interactive" geometry="primitive:box; width:0.5; height:0.5; depth:0.5;"
+                  material="color:rgb(200, 50, 255)" position="-3 0.5 -12" static-body="shape:hull;"
+                  circles-pickup-object=" pickupPosition:0 0 0;
+                                          dropScale:1 1 1;
+                                          dropRotation:0 0.1 0; 
+                                          animate:true;"></a-entity>
+
+        <a-entity id='artfac' class="interactive" geometry="primitive:box; width:0.2; height:0.2; depth:0.2;"
+        material="color:rgb(100, 250, 55)" position="-6 1.3 -4"
+        circles-artefact="inspectScale:2 2 2;
+                          label_offset:0.0 0.5 0.0; arrow_position:down;
+                          descriptionLookAt:true;
+                          title:Artefact;
+                          description:This object is a placeholder for what will be added. Information about it will replace this text.; 
+                          label_text:Example Object;"></a-entity>
+
+  <!-- move to other worlds ==> circles-portal="img_src:(the image in the portal); title_text:title; link_url:/w/(the world folder)"
+        the text has back-face culling -->
+
+  <!--  EXAMPLE: circles-portal="img_src:#link_2_360; title_text:In The Classroom; link_url:/w/WIT_2_Lab"
+        you go to the index.html file in the "WIT_2_Lab" folder. No idea what "/w/" is meant to do. The parent folder is 'worlds' -->
+        <a-entity id="Quebec"
+                position="-5 1.5 4" rotation="0 90 0" scale="1 1 1"
+                circles-portal="title_text:Quebec; link_url:/w/Quebec"></a-entity>
+
+        <!-- the teleport circles on the ground -->
+        <a-entity circles-checkpoint circles-spawnpoint position="-2 0 -10"></a-entity>
+        <a-entity circles-checkpoint position="-4 0 -3"></a-entity>
+        <a-entity circles-checkpoint position="-6 0 -15"></a-entity>
+        <a-entity circles-checkpoint position="-3 0 5"></a-entity>
+
+        <a-entity id="museum_room" position="2 0 0" scale="1.5 1.5 1.5" static-body="shape:hull;" gltf-model="#museum"></a-entity>
+      </a-scene>
+
+    <!-- Circles' end scripts [REQUIRED] -->
+    <circles-end-scripts/>
+  </body>
+</html>
