@@ -23,6 +23,8 @@
           <!-- Circles' built-in assets [REQUIRED] -->
           <circles-assets/>
           <!--Audio Sound Effects-->
+          <audio id="Ingenium_music" src="assets/audio/Space Music Pack/loading.wav" preload="auto" crossorigin="anonymous"></audio>
+
 
 
 
@@ -49,9 +51,11 @@
                           title:Artefact;
                           description:This object is a placeholder for what will be added. Information about it will replace this text.; 
                           label_text:Example   Object;"></a-entity>
+                          
 
   <!-- move to other worlds ==> circles-portal="img_src:(the image in the portal); title_text:title; link_url:/w/(the world folder)"
         the text has back-face culling -->
+        <a-entity circles-sound="type:music; src:#Ingenium_music; autoplay:true; loop:true; volume:1.0;"></a-entity>
 
   <!--  EXAMPLE: circles-portal="img_src:#link_2_360; title_text:In The Classroom; link_url:/w/WIT_2_Lab"
         you go to the index.html file in the "WIT_2_Lab" folder. No idea what "/w/" is meant to do. The parent folder is 'worlds' -->
