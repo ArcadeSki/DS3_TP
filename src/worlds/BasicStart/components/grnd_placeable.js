@@ -5,11 +5,17 @@ AFRAME.registerComponent('grnd-placeable', {
         initialPos:{type:'array'}
     },
     init:function(){
-        let greens = document.querySelectorAll('#tp');
+        //these are our teleport points where you can place objects
+        let greens = document.querySelectorAll('.tp');
+
+        let finalPos = getMats();
+        console.log(finalPos);
+
+        //loops to set the inital position of our tp points
         for( let i=0; i<greens.length; i++ )
         {
-            this.data.initialPos += greens[i].getAttribute('dropPosition');
-            console.log(greens[i].getAttribute('dropPosition'));
+            this.data.initialPos += greens[i].getAttribute('position');
+            console.log(greens[i].getAttribute('position'));
         }
         const CONTEXT_AF = this;
         let playerPos = CIRCLES.getAvatarRigElement().object3D.position;
@@ -24,7 +30,6 @@ AFRAME.registerComponent('grnd-placeable', {
         setInterval( () => {
             playerPos = CIRCLES.getAvatarRigElement().object3D.position;
             //console.log('player: ', playerPos.x, '|| tp: ', greens[0].object3D.position.x);
-            console.log(playerPos.x === greens[0].object3D.position.x);
             if( (playerPos.x === greens[0].object3D.position.x) &&
                 (playerPos.z === greens[0].object3D.position.z))
                 { CONTEXT_AF.el.setAttribute('circles-pickup-object', {dropPosition:'-6 1.3 -3'}); }
@@ -33,3 +38,17 @@ AFRAME.registerComponent('grnd-placeable', {
         }, 10);
     }
 });
+
+function getMats() {
+    let mats = document.querySelectorAll('.mat');
+    console.log(mats.length);
+    let matsPos;
+
+    for( let i=0; i<mats.length; i++ )
+        {
+            matsPos += mats[i].getAttribute('position');
+            console.log(mats[i].getAttribute('position'));
+        }
+
+    return matsPos;
+}
