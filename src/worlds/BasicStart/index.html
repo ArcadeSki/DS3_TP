@@ -7,6 +7,7 @@
 
     <script src="/global/js/libs/aframe-physics-system.min.js"></script>
     <script src="/worlds/BasicStart/components/grnd_placeable.js"></script>
+    <script src="/worlds/BasicStart/components/checkQuebec.js"></script>
 
   </head>
   <body>
@@ -48,11 +49,11 @@
                                     description:This object is a placeholder for what will be added. Information about it will replace this text.; 
                                     label_text:Example Object;"></a-entity>
           
-        <a-entity class="interactive box" geometry="primitive:box; width:0.2; height:0.2; depth:0.2;" 
+        <a-entity class="box" geometry="primitive:box; width:0.2; height:0.2; depth:0.2;" 
                   material="color:rgb(100, 250, 55)" position="-4 0 2" grnd-placeable></a-entity> 
-        <a-entity class="interactive cube" geometry="primitive:box; width:0.2; height:0.2; depth:0.2;" 
+        <a-entity class="cube" geometry="primitive:box; width:0.2; height:0.2; depth:0.2;" 
                   material="color:rgb(250, 55, 100)" position="-5 0 2" grnd-placeable></a-entity> 
-        <a-entity class="interactive 3dSquare" geometry="primitive:box; width:0.2; height:0.2; depth:0.2;" 
+        <a-entity class="de" geometry="primitive:box; width:0.2; height:0.2; depth:0.2;" 
                   material="color:rgb(55, 100, 250)" position="-6 0 2" grnd-placeable></a-entity> 
                   
         <!-- IM GONNA TRY SETTING SQUARES AS PLACEABLE AREAS -->
@@ -60,8 +61,13 @@
                   position="-3 0 -5" material="color:rgb(255,0,0)"></a-entity>
         <a-entity class="mat cube" geometry="primitive:box; height:0.1; width:0.5; depth:0.5;" 
                   position="-3 0 -8" material="color:rgb(0,255,0)"></a-entity>
-        <a-entity class="mat 3dSquare" geometry="primitive:box; height:0.1; width:0.5; depth:0.5;" 
+        <a-entity class="mat de" geometry="primitive:box; height:0.1; width:0.5; depth:0.5;" 
                   position="-3 0 -12" material="color:rgb(0,0,255)"></a-entity>
+
+        <a-entity geometry="primitive:box; height:1; width:0.5; depth:0.5;" position="-3 0.5 -10" material="color:white;">
+          <a-entity check-Quebec class="interactive" onclick="check_quebec()" geometry="primitive:cylinder; height:0.4; radius:0.2;" position="0 0.5 0" 
+          material="color:rgb(255, 100, 100);"></a-entity>
+        </a-entity>
 
   <!-- move to other worlds ==> circles-portal="img_src:(the image in the portal); title_text:title; link_url:/w/(the world folder)"
         the text has back-face culling -->

@@ -5,20 +5,25 @@ AFRAME.registerComponent('grnd-placeable', {
         initialPos:{type:'array'}
     },
     init:function(){
+        const CONTEXT_AF = this;
+        let playerPos = CIRCLES.getAvatarRigElement().object3D.position;
         //these are our teleport points where you can place objects
         let greens = document.querySelectorAll('.tp');
-
-        let finalPos = getMats();
-        console.log(finalPos);
-
+        let mats = document.querySelectorAll('.mat');
+        let matsPos;
+    
+        for( let i=0; i<mats.length; i++ )
+            {
+                matsPos += mats[i].getAttribute('position');
+                //console.log(mats[i].getAttribute('position'));
+            }
+        
         //loops to set the inital position of our tp points
         for( let i=0; i<greens.length; i++ )
         {
-            this.data.initialPos += greens[i].getAttribute('position');
-            console.log(greens[i].getAttribute('position'));
+            CONTEXT_AF.data.initialPos += greens[i].getAttribute('position');
+            //console.log(greens[i].getAttribute('position'));
         }
-        const CONTEXT_AF = this;
-        let playerPos = CIRCLES.getAvatarRigElement().object3D.position;
 
         if (CONTEXT_AF.el.hasAttribute('circles-pickup-object') === false) {
             CONTEXT_AF.el.setAttribute('circles-pickup-object', {});
@@ -33,22 +38,8 @@ AFRAME.registerComponent('grnd-placeable', {
             if( (playerPos.x === greens[0].object3D.position.x) &&
                 (playerPos.z === greens[0].object3D.position.z))
                 { CONTEXT_AF.el.setAttribute('circles-pickup-object', {dropPosition:'-6 1.3 -3'}); }
-            else{ CONTEXT_AF.el.setAttribute('circles-pickup-object', {dropPosition: '0 0 0'}); }
+            else{ CONTEXT_AF.el.setAttribute('circles-pickup-object', {dropPosition: CONTEXT_AF.data.initialPos}); }
             
         }, 10);
     }
 });
-
-function getMats() {
-    let mats = document.querySelectorAll('.mat');
-    console.log(mats.length);
-    let matsPos;
-
-    for( let i=0; i<mats.length; i++ )
-        {
-            matsPos += mats[i].getAttribute('position');
-            console.log(mats[i].getAttribute('position'));
-        }
-
-    return matsPos;
-}
