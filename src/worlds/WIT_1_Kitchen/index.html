@@ -37,9 +37,29 @@
         <!-- audio -->
         
         <!-- narration -->
-        <audio id="Narr_acceptance-snd" src="/worlds/WIT_1_Kitchen/assets/audio/Narr_WIT_1_Acceptance.mp3" preload="true"></audio>
+        
+        
+        <!-- <audio id="Narr_acceptance-snd" src="/worlds/WIT_1_Kitchen/assets/audio/Narr_WIT_1_Acceptance.mp3" preload="true"></audio>
         <audio id="Narr_keys-snd" src="/worlds/WIT_1_Kitchen/assets/audio/Narr_WIT_1_Keys.mp3" preload="true"></audio>
-        <audio id="Narr_math-snd" src="/worlds/WIT_1_Kitchen/assets/audio/Narr_WIT_1_Math.mp3" preload="true"></audio>
+        <audio id="Narr_math-snd" src="/worlds/WIT_1_Kitchen/assets/audio/Narr_WIT_1_Math.mp3" preload="true"></audio> -->
+        
+
+        <!--HEADPHONES NARRATION-->
+        <audio id="Narr-Headphones-ENG" src="src\worlds\WIT_1_Kitchen\assets\audio\Recordings\Headphone_ENG.wav" preload="true">
+        <audio id="Narr-Headphones-FR" src="src\worlds\WIT_1_Kitchen\assets\audio\Recordings\Headphone_ENG.wav" preload="true">
+        
+          <!--JACKET NARRATION-->
+        <audio id="Narr-Jacket-ENG" src="src\worlds\WIT_1_Kitchen\assets\audio\Recordings\Jacket_ENG.wav" preload="true">
+        <audio id="Narr-Jacket-FR" src="src\worlds\WIT_1_Kitchen\assets\audio\Recordings\Jacket_FRE.wav" preload="true">
+        <!--MAILBOX NARRATION-->
+        <audio id="Narr-Mailbox-ENG" src="src\worlds\WIT_1_Kitchen\assets\audio\Recordings\Maibox_ENG.wav" preload="true">
+        <audio id="Narr-Mailbox-FR" src="src\worlds\WIT_1_Kitchen\assets\audio\Recordings\Mailbox_FRE.wav" preload="true">
+          <!--RADIO NARRATION-->
+        <audio id="Narr-Radio-ENG" src="src\worlds\WIT_1_Kitchen\assets\audio\Recordings\Radio_ENG.wav" preload="true">
+        <audio id="Narr-Radio-ENG" src="src\worlds\WIT_1_Kitchen\assets\audio\Recordings\Radio_ENG.wav" preload="true">
+
+
+
 
         <!-- ambience -->
 
@@ -71,8 +91,13 @@
       <a-entity position="0 0 -4" circles-sound="type:ambient; src:#Amb_suburb-snd; autoplay:true; loop:true; volume:0.1;" ></a-entity>
       <a-entity position="-2.895 1 1.164" circles-sound="type:ambient; src:#Amb_kitchen-snd; autoplay:true; loop:true; volume:0.7;" ></a-entity>
 
+
+
+      <!--REPLACE FOR QUEBEC ROOM MODELL HERE-->
       <a-entity id="room_model" gltf-model="#room-gltf" circles-sphere-env-map="src:#skyMap" postion="0 0 0" rotation="0 0 0" scale="1 1 1" shadow="receive:false; cast:false;"></a-entity>
 
+
+      <!---ADDING ARTEFACT NARRATION HERE-->
       <a-entity id="Artefact-Homework"
                 position="0.658 0.853 -0.443" rotation="-90 0 0" scale="1 1 1"
                 gltf-model="#homework-gltf"
@@ -84,7 +109,7 @@
                                   title_back:Math for Women;
                                   description_back:Statistically administrative and financial roles tend to be more female accepting. Since Sarah has always excelled in math and helps with the taxes a program that's more 'feminine' such as accounting would suit her parents more.;
                                   label_text:Math;
-                                  audio:#Narr_math-snd; volume:0.4;"></a-entity>
+                                  audio:#Narr-Headphones-ENG; volume:0.4;"></a-entity> <!--ADDING NEGLIGH NARRATION HERE FOR TESTING // NEED TO ADD FRENCH ON THE FLIPPING ACTION AND OR BUTTON     -->
 
       <a-entity id="Artefact-Acceptance"
                                   position="1.008 1.049 3.238" rotation="-90 200 0" scale="1 1 1"
