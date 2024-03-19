@@ -23,7 +23,8 @@
           <!-- Circles' built-in assets [REQUIRED] -->
           <circles-assets/>
           <!--Audio Sound Effects-->
-          <!--menu ambient sound-->
+
+          <!--menu/Lobby ambient sound-->
           <audio id="Ingenium_music" src="assets/audio/Space Music Pack/loading.wav" preload="auto" crossorigin="anonymous"></audio>
           <!--sound effct-->
           <audio id="object_select" src="assets/audio/confirm_style_3_echo_002.wav" preload="auto" crossorigin="anonymous"></audio>
@@ -71,10 +72,14 @@
 
   <!-- move to other worlds ==> circles-portal="img_src:(the image in the portal); title_text:title; link_url:/w/(the world folder)"
         the text has back-face culling -->
-        <a-entity circles-sound="type:music; src:#Ingenium_music; autoplay:true; loop:true; volume:1.0;"></a-entity>
+
+        <!--Playing Music Entity-->
+        <a-entity circles-sound="type:music; src:#Ingenium_music; autoplay:true; loop:true; volume:0.5;"></a-entity>
 
   <!--  EXAMPLE: circles-portal="img_src:#link_2_360; title_text:In The Classroom; link_url:/w/WIT_2_Lab"
         you go to the index.html file in the "WIT_2_Lab" folder. No idea what "/w/" is meant to do. The parent folder is 'worlds' -->
+
+        <!--Using the kitchen world as a base of quebec room -- will teleport you there-->
         <a-entity id="Quebec"
                   position="-5 1.5 4" rotation="0 90 0" scale="1 1 1"
                   circles-portal="title_text:Quebec; link_url:/w/WIT_1_Kitchen"></a-entity>
