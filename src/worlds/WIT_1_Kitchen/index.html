@@ -25,7 +25,7 @@
         <a-asset-item id="test2-gltf" response-type="arraybuffer" src="/worlds/WIT_1_Kitchen/assets/models/Test2.glb"></a-asset-item>
 
         <!-- artefact models -->
-        <a-asset-item id="headphone-gltf" response-type="arraybuffer" src="/worlds/WIT_1_Kitchen/assets/models/FILLER-NAME.glb"></a-asset-item>
+        <!-- <a-asset-item id="headphone-gltf" response-type="arraybuffer" src="/worlds/WIT_1_Kitchen/assets/models/FILLER-NAME.glb"></a-asset-item> -->
 
         <!-- <a-asset-item id="Drill-gltf" src="/worlds/WIT_1_ElectricLab/assets/models/Drill.glb" response-type="arraybuffer"></a-asset-item> -->
 
@@ -94,9 +94,9 @@
 
 
       <!---ADDING ARTEFACT NARRATION HERE-->
-      <a-entity class="Artefact-Headphones"
+      <a-entity id="Artefact-Headphones"
                 position="0.658 0.853 -0.443" rotation="-90 0 0" scale="1 1 1"
-                gltf-model="#headphones-gltf"
+                gltf-model="#headphone-gltf"
                 circles-sphere-env-map="src:#skyMap"
                 circles-artefact="inspectScale:2 2 2; textRotationY:0.0; inspectRotation:0 0 0;
                                   label_offset:0.0 0.5 0.0; arrow_position:down;
