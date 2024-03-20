@@ -19,6 +19,7 @@
         <a-assets>
 
           <a-asset-item id="museum" response-type="arraybuffer" src="/worlds/BasicStart/assets/InnovationLab_rebuild_v008.glb"></a-asset-item>
+          <a-asset-item id="test-gltf" response-type="arraybuffer" src="/worlds/BasicStart/assets/Test.glb"></a-asset-item>
 
           <!-- Circles' built-in assets [REQUIRED] -->
           <circles-assets/>
@@ -28,10 +29,6 @@
           <audio id="Ingenium_music" src="assets/audio/Space Music Pack/loading.wav" preload="auto" crossorigin="anonymous"></audio>
           <!--sound effct-->
           <audio id="object_select" src="assets/audio/confirm_style_3_echo_002.wav" preload="auto" crossorigin="anonymous"></audio>
-
-
-
-
 
         </a-assets>
 
@@ -86,11 +83,15 @@
 
         <!-- the teleport circles on the ground -->
         <a-entity circles-checkpoint circles-spawnpoint position="-2 0 -10"></a-entity>
-        <a-entity class='tp' circles-checkpoint position="-4 0 -3"></a-entity>
-        <a-entity circles-checkpoint position="-6 0 -15"></a-entity>
-        <a-entity circles-checkpoint position="-3 0 5"></a-entity>
+        <a-entity circles-checkpoint position="-5 0 1"></a-entity>
+
+        <!-- the tps where you can place things -->
+        <a-entity class='tp' circles-checkpoint position="-4 0 -5"></a-entity>
+        <a-entity class='tp'circles-checkpoint position="-4 0 -8"></a-entity>
+        <a-entity class='tp'circles-checkpoint position="-4 0 -12"></a-entity>
 
         <a-entity id="museum_room" position="2 0 0" scale="1.5 1.5 1.5" gltf-model="#museum"></a-entity>
+        <a-entity id="test_room" position="20 0 0" scale="4 4 4" gltf-model="#test-gltf"></a-entity>
       </a-scene>
 
     <!-- Circles' end scripts [REQUIRED] -->
