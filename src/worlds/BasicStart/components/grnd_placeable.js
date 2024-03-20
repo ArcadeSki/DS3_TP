@@ -37,7 +37,7 @@ AFRAME.registerComponent('grnd-placeable', {
             //console.log('player: ', playerPos.x, '|| tp: ', greens[0].object3D.position.x);
             if( (playerPos.x === greens[0].object3D.position.x) &&
                 (playerPos.z === greens[0].object3D.position.z))
-                { CONTEXT_AF.el.setAttribute('circles-pickup-object', {dropPosition:'-6 1.3 -3'}); }
+                { CONTEXT_AF.el.setAttribute('circles-pickup-object', {dropPosition:mats[1].object3D.position}); }
             else{ CONTEXT_AF.el.setAttribute('circles-pickup-object', {dropPosition: CONTEXT_AF.data.initialPos}); }
             
         }, 10);

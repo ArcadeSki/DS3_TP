@@ -7,7 +7,7 @@
 
     <script src="/global/js/libs/aframe-physics-system.min.js"></script>
     <script src="/worlds/BasicStart/components/grnd_placeable.js"></script>
-    <script src="/worlds/BasicStart/components/checkQuebec.js"></script>
+    <script src="/worlds/BasicStart/components/checkLayout.js"></script>
 
   </head>
   <body>
@@ -58,9 +58,9 @@
                   material="color:rgb(55, 100, 250)" position="-6 0 2" grnd-placeable></a-entity> 
                   
         <!-- IM GONNA TRY SETTING SQUARES AS PLACEABLE AREAS -->
-        <a-entity class="mat box" geometry="primitive:box; height:0.1; width:0.5; depth:0.5;" 
-                  position="-3 0 -5" material="color:rgb(255,0,0)"></a-entity>
         <a-entity class="mat cube" geometry="primitive:box; height:0.1; width:0.5; depth:0.5;" 
+                  position="-3 0 -5" material="color:rgb(255,0,0)"></a-entity>
+        <a-entity class="mat box" geometry="primitive:box; height:0.1; width:0.5; depth:0.5;" 
                   position="-3 0 -8" material="color:rgb(0,255,0)"></a-entity>
         <a-entity class="mat de" geometry="primitive:box; height:0.1; width:0.5; depth:0.5;" 
                   position="-3 0 -12" material="color:rgb(0,0,255)"></a-entity>
