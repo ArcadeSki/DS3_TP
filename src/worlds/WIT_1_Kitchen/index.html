@@ -4,7 +4,9 @@
 
     <!-- Circles' head scripts [REQUIRED] -->
     <circles-start-scripts/>
-
+    
+    <script src="/worlds/BasicStart/components/grnd_placeable.js"></script>
+    <script src="/worlds/BasicStart/components/checkLayout.js"></script>
     <!-- add your custom scripts here -->
     <!-- <script src="/worlds/hub/scripts/hub.js"></script> -->
   </head>
@@ -22,7 +24,8 @@
         <img id='link_1_360' src='/global/images/Campfire_Screen.jpg' crossorigin="anonymous">
 
         <!-- <a-asset-item id="navmesh_gltf" src="/worlds/WIT_1_Kitchen/assets/models/wit-1-nav.glb" response-type="arraybuffer" crossorigin="anonymous"></a-asset-item> -->
-        <a-asset-item id="test2-gltf" response-type="arraybuffer" src="/worlds/WIT_1_Kitchen/assets/models/Test2.glb"></a-asset-item>
+        <a-asset-item id="test-gltf" response-type="arraybuffer" src="/worlds/WIT_1_Kitchen/assets/models/Test2.glb"></a-asset-item>
+        <a-asset-item id="small-gltf" response-type="arraybuffer" src="/worlds/WIT_1_Kitchen/assets/models/smallSet.glb"></a-asset-item>
 
         <!-- artefact models -->
         <!-- <a-asset-item id="headphone-gltf" response-type="arraybuffer" src="/worlds/WIT_1_Kitchen/assets/models/FILLER-NAME.glb"></a-asset-item> -->
@@ -41,18 +44,18 @@
 
         <!--HEADPHONES NARRATION-->
         <!-- <audio id="Narr-Headphones-ENG" src="/worlds/WIT_1_Kitchen/assets/audio/Recordings/Headphone_ENG.wav" preload="true"></audio> -->
-        <audio id="Narr_Headphones-FR" src="src/worlds/WIT_1_Kitchen/assets/audio/Recordings/headphone_FR.wav" preload="true"></audio>
-        <audio id="Narr_Headphones-ENG" src="src/worlds/WIT_1_Kitchen/assets/audio/Recordings/Headphone_ENG.mp3" preload="true"></audio>
+        <audio id="Narr_Headphones-FR" src="/worlds/WIT_1_Kitchen/assets/audio/Recordings/headphone_FRE.wav" preload="true"></audio>
+        <audio id="Narr_Headphones-ENG" src="/worlds/WIT_1_Kitchen/assets/audio/Recordings/Headphone_ENG.mp3" preload="true"></audio>
         
         <!--JACKET NARRATION-->
-        <audio id="Narr_Jacket-ENG" src="src/worlds/WIT_1_Kitchen/assets/audio/Recordings/Jacket_ENG.wav" preload="true"></audio>
-        <audio id="Narr_Jacket-FR" src="src/worlds/WIT_1_Kitchen/assets/audio/Recordings/Jacket_FRE.wav" preload="true"></audio>
+        <audio id="Narr_Jacket-ENG" src="/worlds/WIT_1_Kitchen/assets/audio/Recordings/Jacket_ENG.wav" preload="true"></audio>
+        <audio id="Narr_Jacket-FR" src="/worlds/WIT_1_Kitchen/assets/audio/Recordings/Jacket_FRE.wav" preload="true"></audio>
         <!--MAILBOX NARRATION-->
-        <audio id="Narr_Mailbox-ENG" src="src/worlds/WIT_1_Kitchen/assets/audio/Recordings/Maibox_ENG.wav" preload="true"></audio>
-        <audio id="Narr_Mailbox-FR" src="src/worlds/WIT_1_Kitchen/assets/audio/Recordings/Mailbox_FRE.wav" preload="true"></audio>
+        <audio id="Narr_Mailbox-ENG" src="/worlds/WIT_1_Kitchen/assets/audio/Recordings/Maibox_ENG.wav" preload="true"></audio>
+        <audio id="Narr_Mailbox-FR" src="/worlds/WIT_1_Kitchen/assets/audio/Recordings/Mailbox_FRE.wav" preload="true"></audio>
         <!--RADIO NARRATION-->
-        <audio id="Narr_Radio-ENG" src="src/worlds/WIT_1_Kitchen/assets/audio/Recordings/Radio_ENG.wav" preload="true"></audio>
-        <audio id="Narr_Radio-ENG" src="src/worlds/WIT_1_Kitchen/assets/audio/Recordings/Radio_ENG.wav" preload="true"></audio>
+        <audio id="Narr_Radio-ENG" src="/worlds/WIT_1_Kitchen/assets/audio/Recordings/Radio_ENG.wav" preload="true"></audio>
+        <audio id="Narr_Radio-ENG" src="/worlds/WIT_1_Kitchen/assets/audio/Recordings/Radio_ENG.wav" preload="true"></audio>
         
 
 
@@ -60,10 +63,10 @@
         <!-- ambience -->
 
         <!-- credit: tosha73 @ https://freesound.org/people/tosha73/sounds/496209/  -->
-        <audio id="Amb_suburb-snd" src="/worlds/WIT_1_Kitchen/assets/audio/Amb_Suburb.mp3"></audio>
+<!-- <audio id="Amb_suburb-snd" src="/worlds/WIT_1_Kitchen/assets/audio/Amb_Suburb.mp3"></audio> -->
 
         <!-- credit: yahaveva @ https://freesound.org/people/yahaveva/sounds/444844/ -->
-        <audio id="Amb_kitchen-snd" src="/worlds/WIT_1_Kitchen/assets/audio/Amb_Kitchen.mp3"></audio>
+<!-- <audio id="Amb_kitchen-snd" src="/worlds/WIT_1_Kitchen/assets/audio/Amb_Kitchen.mp3"></audio> -->
 
         <!-- Circles' built-in assets [REQUIRED] -->
         <circles-assets/>
@@ -73,34 +76,50 @@
       <circles-manager-avatar/>
 
       <!-- checkpoints -->
-      <a-entity circles-checkpoint circles-spawnpoint position="-1.44 0.05 2.6"></a-entity>
-      <a-entity circles-checkpoint circles-spawnpoint position="-0.8 0.05 -1.0"></a-entity>
-      <a-entity circles-checkpoint circles-spawnpoint position="1.3 0.05 1.3"></a-entity>
-      <a-entity circles-checkpoint circles-spawnpoint position="-0.956 0.05 4.779"></a-entity>
-      <a-entity circles-checkpoint circles-spawnpoint position="3.374 0.05 1.289"></a-entity>
+      <a-entity id="headphone-mat" class='tp' circles-checkpoint position="0.8 0.05 -1.9"></a-entity>
+      <a-entity id="mailbox-mat" class='tp' circles-checkpoint position="-2.3 0.05 0.8"></a-entity>
+
+      <a-entity circles-checkpoint circles-spawnpoint position="3.5 0.05 -2.8"></a-entity>
+      <a-entity circles-checkpoint circles-spawnpoint position="3.8 0.05 0.7"></a-entity>
+      <a-entity circles-checkpoint circles-spawnpoint position="5.3 0.05 0"></a-entity>
+      <a-entity circles-checkpoint circles-spawnpoint position="5.3 0.05 -2"></a-entity>
+
+      <a-entity circles-checkpoint circles-spawnpoint position="5.3 0.05 3.5"></a-entity>
+      <a-entity circles-checkpoint circles-spawnpoint position="3.3 0.05 3.5"></a-entity>
+      <a-entity circles-checkpoint circles-spawnpoint position="1.3 0.05 3.5"></a-entity>
+      <a-entity circles-checkpoint circles-spawnpoint position="-1.3 0.05 3.5"></a-entity>
 
       <!-- sky and lights -->
       <!-- bad place for narrative manager but :) -->
       <a-entity light="type:ambient; color:#FFF; intensity:3.0"></a-entity>
 
       <!-- sounds -->
-      <a-entity position="0 0 -4" circles-sound="type:ambient; src:#Amb_suburb-snd; autoplay:true; loop:true; volume:0.1;" ></a-entity>
-      <a-entity position="-2.895 1 1.164" circles-sound="type:ambient; src:#Amb_kitchen-snd; autoplay:true; loop:true; volume:0.7;" ></a-entity>
+      <!--<a-entity position="0 0 -4" circles-sound="type:ambient; src:#Amb_suburb-snd; autoplay:true; loop:true; volume:0.1;" ></a-entity>
+       <a-entity position="-2.895 1 1.164" circles-sound="type:ambient; src:#Amb_kitchen-snd; autoplay:true; loop:true; volume:0.7;" ></a-entity> -->
 
 
 
       <!--REPLACE FOR QUEBEC ROOM MODEL HERE-->
-      <a-entity id="room_model" gltf-model="#test2-gltf" circles-sphere-env-map="src:#skyMap" postion="0 0 0" rotation="0 0 0" scale="4.5 4.5 4.5" shadow="receive:false; cast:false;"></a-entity>
+      <a-entity id="room_model" gltf-model="#test-gltf" circles-sphere-env-map="src:#skyMap" 
+                postion="0 0 0" rotation="0 0 0" scale="4.5 4.5 4.5" shadow="receive:false; cast:false;">
+        <a-entity id="set_model" gltf-model="#small-gltf" circles-sphere-env-map="src:#skyMap" 
+                  shadow="receive:false; cast:false;"></a-entity>
+      </a-entity>
       
-
+      <!-- PLACES TO PUT OBJECTS -->
+      <a-entity class='mat Artefact-Headphones' geometry="primitive:box; height:0.1; width:0.3; depth:0.3;"
+                position="1.15 1.3 -3.3" material="color:rgb(50,100,255)"></a-entity>
+      <a-entity class='mat Artefact-Mailbox' geometry="primitive:box; height:0.1; width:0.3; depth:0.3;"
+                position="-1.9 0.05 -1.7" material="color:rgb(255,50,100)"></a-entity>
+      
 
       <!---ADDING ARTEFACT NARRATION HERE-->
 
-
       <!--TESTING THIS ONE SPECIFICALLY-->
       <a-entity class="Artefact-Headphones"
-                position="0.658 0.853 -0.443" rotation="-90 0 0" scale="1 1 1"
+                position="2.8 0.95 0.7" scale="1 1 1"
                 geometry="primitive:box; height:0.1; width:0.5; depth:0.5;" 
+                material="color:rgb(100,100,100);"
                 circles-sphere-env-map="src:#skyMap"
                 circles-artefact="inspectScale:2 2 2; textRotationY:0.0; inspectRotation:0 0 0;
                                   label_offset:0.0 0.5 0.0; arrow_position:down;
@@ -108,21 +127,24 @@
                                   description:'The idea of taking classes to become an accountant is not what I want. Sure, numbers come easily to me and I'm good at solving equations. But I'm also good at other things, being proficient in math doesn't define me.';
                                   title_back:Math for Women;
                                   description_back:Statistically administrative and financial roles tend to be more female accepting. Since Sarah has always excelled in math and helps with the taxes a program that's more 'feminine' such as accounting would suit her parents more.;
-                                  label_text:Math;
-                                  audio:#Narr_Headphones-ENG; volume:1;"></a-entity> <!--ADDING NEGLIGH NARRATION HERE FOR TESTING // NEED TO ADD FRENCH ON THE FLIPPING ACTION AND OR BUTTON     -->
+                                  label_on:false;
+                                  audio:#Narr_Headphones-ENG; volume:1;"
+                grnd-placeable></a-entity>
 
-      <a-entity class="Artefact-Acceptance"
-                                  position="1.008 1.049 3.238" rotation="-90 200 0" scale="1 1 1"
-                                  gltf-model="#acceptance-gltf"
-                                  circles-sphere-env-map="src:#skyMap"
-                                  circles-artefact="inspectScale:3 3 3; textRotationY:0.0; inspectRotation:0 0 0;
+      <a-entity class="Artefact-Mailbox"
+                position="4 1 -4.2" scale="1 1 1"
+                geometry="primitive:box; height:1.2; width:0.6; depth:0.7;" 
+                material="color:rgb(100,100,100);"
+                circles-sphere-env-map="src:#skyMap"
+                circles-artefact="inspectScale:1 1 1; textRotationY:0.0; inspectRotation:0 0 0;
                                   label_offset:0.0 0.5 0.0; arrow_position:down;
                                   title:Acceptance;
                                   description:'Despite their concerns about me getting this diploma in tech., I know it will open doors for me. My parents might not approve at first, but I'll show them it’s worth it.';
                                   title_back:College Diploma;
                                   description_back:The letter reads accepted and the anxious waiting has finally subsided. Now it’s simply down to getting the approval from her family. Many of which still don’t understand the value of a College technician diploma.;
-                                  label_text:Acceptance;
-                                  audio:#Narr-Headphones-ENG; volume:0.4;"></a-entity>
+                                  label_on:false;
+                                  audio:#Narr_Mailbox-ENG; volume:0.4;"
+                grnd-placeable></a-entity>
 
       <a-entity class="Artefact-Keys"
                                   position="-2.56 0.978 -1.09" rotation="-90 45.000 0" scale="1.3 1.3 1.3"
@@ -134,14 +156,11 @@
                                   description:'When I was young, the options my parents had were limited. They needed to work long hours for this shop, but I need to find my own path. Maybe my love of working with my hands and building could help automate areas in the shop.';
                                   title_back:Not Her Future;
                                   description_back:The years of dedication and hardship her parents fought through are felt in those shop keys. She passes them daily, reassuring herself that is not her path. Yet her parents quickly formed a decision to follow their footsteps and continue the legacy.;
-                                  label_text:Keys;
-                                  audio:#Narr-Headphones-ENG; volume:1;"></a-entity>
+                                  label_on:false;
+                                  audio:#Narr_Mailbox-ENG; volume:1;"></a-entity>
 
       <!-- <a-entity id="navmesh" gltf-model="#navmesh_gltf" visible='false' nav-mesh></a-entity> -->
 
-      <a-entity id="campfire_link"
-                position="4.919 1.347 1.291" rotation="0 180 0" scale="1 1 1"
-                circles-portal="img_src:#link_1_360; title_text:The Fire; link_url:/w/Campfire"></a-entity>
     </a-scene>
 
     <!-- Circles' end scripts [REQUIRED] -->
