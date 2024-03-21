@@ -57,6 +57,7 @@
         <audio id="Narr_Radio-ENG" src="/worlds/WIT_1_Kitchen/assets/audio/Recordings/Radio_ENG.wav" preload="true"></audio>
         <audio id="Narr_Radio-ENG" src="/worlds/WIT_1_Kitchen/assets/audio/Recordings/Radio_ENG.wav" preload="true"></audio>
         
+        <audio id="Narr_TEST" src="src/worlds/WIT_1_Kitchen/assets/audio/Narr_WIT_1_Keys.mp3" preload="true"></audio>
 
 
 
@@ -94,8 +95,8 @@
       <a-entity light="type:ambient; color:#FFF; intensity:3.0"></a-entity>
 
       <!-- sounds -->
-      <!--<a-entity position="0 0 -4" circles-sound="type:ambient; src:#Amb_suburb-snd; autoplay:true; loop:true; volume:0.1;" ></a-entity>
-       <a-entity position="-2.895 1 1.164" circles-sound="type:ambient; src:#Amb_kitchen-snd; autoplay:true; loop:true; volume:0.7;" ></a-entity> -->
+      <a-entity position="0 0 -4" circles-sound="type:ambient; src:#Amb_suburb-snd; autoplay:true; loop:true; volume:0.1;" ></a-entity>
+      <!-- <a-entity position="-2.895 1 1.164" circles-sound="type:ambient; src:#Amb_kitchen-snd; autoplay:true; loop:true; volume:0.7;" ></a-entity> -->
 
 
 
@@ -149,6 +150,8 @@
       <a-entity class="Artefact-Keys"
                                   position="-2.56 0.978 -1.09" rotation="-90 45.000 0" scale="1.3 1.3 1.3"
                                   gltf-model="#keys-gltf"
+                                  geometry="primitive:box; height:0.1; width:0.5; depth:0.5;" 
+
                                   circles-sphere-env-map="src:#skyMap"
                                   circles-artefact="inspectScale:5 5 5; textRotationY:90.0; inspectRotation:0 0 0;
                                   label_offset:0.0 0.5 0.0; arrow_position:down;
