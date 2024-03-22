@@ -3,7 +3,8 @@
 //WHEN PICKED UP, THE OBJECT WILL FOLLOW YOU. WHEN RELEASED, TI WILL EITHER GO BACK TO ITS INITAL POSITION OR TO THE TP'S CORRESPONDING PLACEMAT.
 AFRAME.registerComponent('grnd-placeable', {
     schema: {
-        initialPos:{type:'string'}
+        initialPos:{type:'string'},
+        dropRot:{type:'string', default:'0 0.1 0'}
     },
     init:function(){
         const CONTEXT_AF = this;
@@ -23,7 +24,7 @@ AFRAME.registerComponent('grnd-placeable', {
         }
 
         //make sure object is flat when released
-        CONTEXT_AF.el.setAttribute('circles-artefact', {origRotation:'0 0.1 0'});
+        CONTEXT_AF.el.setAttribute('circles-artefact', {origRotation:CONTEXT_AF.data.dropRot});
         
         //tick:function was having issues getting variables
         setInterval( () => {
