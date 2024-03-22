@@ -34,7 +34,8 @@
         <!-- <a-asset-item id="Drill-gltf" src="/worlds/WIT_1_ElectricLab/assets/models/Drill.glb" response-type="arraybuffer"></a-asset-item> -->
 
         <!-- audio -->
-        
+        <audio id="Quebec_music" src="/worlds/WIT_1_Kitchen/assets/audio/slow-travel.wav" preload="auto" crossorigin="anonymous"></audio>
+
         <!-- narration -->
         
         
@@ -96,7 +97,15 @@
 
       <!-- sounds -->
       <a-entity position="0 0 -4" circles-sound="type:ambient; src:#Amb_suburb-snd; autoplay:true; loop:true; volume:0.1;" ></a-entity>
+      <a-entity circles-sound="type:music; src:#Quebec_music; autoplay:true; loop:true; volume:0.1;"></a-entity>
+
+      
+      
       <!-- <a-entity position="-2.895 1 1.164" circles-sound="type:ambient; src:#Amb_kitchen-snd; autoplay:true; loop:true; volume:0.7;" ></a-entity> -->
+
+
+
+
 
       <!-- CAMERA BUTTON -->
       <a-entity position="3.32 0 -0.11">
