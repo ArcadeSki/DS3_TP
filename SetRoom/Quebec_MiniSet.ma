@@ -1,6 +1,6 @@
 //Maya ASCII 2024 scene
 //Name: Quebec_MiniSet.ma
-//Last modified: Thu, Apr 04, 2024 04:05:55 PM
+//Last modified: Thu, Apr 04, 2024 04:10:30 PM
 //Codeset: 1252
 requires maya "2024";
 requires "stereoCamera" "10.0";
@@ -12,20 +12,20 @@ fileInfo "product" "Maya 2024";
 fileInfo "version" "2024";
 fileInfo "cutIdentifier" "202310181224-69282f2959";
 fileInfo "osv" "Windows 11 Home v2009 (Build: 22631)";
-fileInfo "UUID" "D710B6E0-4104-4C4E-D220-649BE8462765";
+fileInfo "UUID" "EFA8820B-455B-74D5-756D-45979F77C5FD";
 fileInfo "license" "education";
 fileInfo "exportedFrom" "/Users/jakeyuen/Desktop/3901_SetRoom/Room_007.ma";
 createNode transform -s -n "persp";
 	rename -uid "DB9C5ED6-9A4E-F7FE-1048-518F4C383231";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 105.51537933313591 69.976340784441305 19.10450755587776 ;
+	setAttr ".t" -type "double3" 153.60570919132678 91.061180611666515 43.607754494036911 ;
 	setAttr ".r" -type "double3" -21.338352698398911 1502.9999999992158 0 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "AC4A0DDB-1D41-76DC-2866-5B90CB774AB2";
 	setAttr -k off ".v" no;
 	setAttr ".pze" yes;
 	setAttr ".fl" 34.999999999999986;
-	setAttr ".coi" 142.64325778428025;
+	setAttr ".coi" 200.58857171838358;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
@@ -40373,7 +40373,7 @@ createNode nodeGraphEditorInfo -n "hyperShadePrimaryNodeEditorSavedTabsInfo";
 	setAttr ".tgi[0].vl" -type "double2" -68.156783815826202 -759.06931185981898 ;
 	setAttr ".tgi[0].vh" -type "double2" 1234.9644129021897 182.87885856509419 ;
 createNode mayaUsdLayerManager -n "mayaUsdLayerManager1";
-	rename -uid "7F63B782-4C29-2F97-035F-39A561FFDB04";
+	rename -uid "2ED3C8AA-47B3-3C9C-FB30-5E954BD16549";
 	setAttr ".sst" -type "string" "";
 select -ne :time1;
 	setAttr ".o" 1;
