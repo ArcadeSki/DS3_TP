@@ -39,20 +39,26 @@ function check_ingenium(){
                         complete.setAttribute('rotation','0 90 0');
                         complete.setAttribute('circles-portal','title_text:Quebec; link_url:/w/WIT_1_Kitchen');
 
+                        document.querySelector('a-scene').setAttribute('background','color:green;');
                         document.querySelector('a-scene').appendChild(complete);
 
                     }
                 else{
                     console.log('WRONG');
+                    document.querySelector('a-scene').setAttribute('background','color:red;');
                 }
                 
             }
         else{
                 console.log('WRONG');
+                document.querySelector('a-scene').setAttribute('background','color:red;');
+
             }
     }
     else{
         console.log('WRONG');
+        document.querySelector('a-scene').setAttribute('background','color:red;');
+
     }
 }
 
@@ -88,13 +94,18 @@ function check_quebec(){
                         complete.setAttribute('rotation','0 0 0');
                         complete.setAttribute('circles-portal','title_text:Lab; link_url:/w/BasicStart');
 
+                        document.querySelector('a-scene').setAttribute('background','color:green;');
                         document.querySelector('a-scene').appendChild(complete);
             }
         else{
                 console.log('WRONG');
+                document.querySelector('a-scene').setAttribute('background','color:red;');
+
             }
     }
     else{
         console.log('WRONG');
+        document.querySelector('a-scene').setAttribute('background','color:red;');
+
     }
 }
