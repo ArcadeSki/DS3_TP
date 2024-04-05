@@ -38,10 +38,10 @@ AFRAME.registerComponent('grnd-placeable', {
             else if((playerPos.x === greens[1].object3D.position.x) &&
                     (playerPos.z === greens[1].object3D.position.z))
             { CONTEXT_AF.el.setAttribute('circles-artefact', {origPosition: mats[1].object3D.position}); } //object goes on green mat
-/*
+
             else if((playerPos.x === greens[2].object3D.position.x) &&
                     (playerPos.z === greens[2].object3D.position.z))
-            { CONTEXT_AF.el.setAttribute('circles-artefact', {origPosition: mats[2].object3D.position}); } //we have two objects in the scene right now*/
+            { CONTEXT_AF.el.setAttribute('circles-artefact', {origPosition: mats[2].object3D.position}); } //we have two objects in the scene right now
 
             //if user is not on a teleport point, release sends the object to its inital position
             else{ CONTEXT_AF.el.setAttribute('circles-artefact', {origPosition: CONTEXT_AF.data.initialPos}); }
