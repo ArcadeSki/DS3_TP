@@ -1,6 +1,38 @@
 'use strict';
 
+AFRAME.registerComponent('tutorial-done', {
+    schema:{
+
+    },
+    init:function(){
+        data = this.data;
+        let socket = io();
+
+        socket.on('connect',(tutDone) => {
+            socket.emit('check', { done:tutDone.complete });
+        });
+
+        socket.on('check',(tut) => {
+            if (tut.done === true)
+            {
+                //turn portal on
+                let complete = document.createElement('a-entity');
+
+                complete.setAttribute('position','-4.8 1.5 3.8');
+                complete.setAttribute('rotation','0 0 0');
+                complete.setAttribute('circles-portal','title_text:Lab; link_url:/w/BasicStart');
+
+                document.querySelector('a-scene').setAttribute('background','color:green;');
+                document.querySelector('a-scene').appendChild(complete);
+            }
+        });
+    }
+
+
+});
+
 function check_ingenium(){
+    let socket = io();
 
     //these can be changed for each room
     let obj1 = document.querySelectorAll('.cube'); //green
@@ -32,15 +64,8 @@ function check_ingenium(){
                     (obj3[0].getAttribute('position').z === obj3[1].getAttribute('position').z))
                     {
                         console.log('Ingenium set is looking good');
-
-                        let complete = document.createElement('a-entity');
-
-                        complete.setAttribute('position','-5 1.5 4');
-                        complete.setAttribute('rotation','0 90 0');
-                        complete.setAttribute('circles-portal','title_text:Quebec; link_url:/w/WIT_1_Kitchen');
-
+                        socket.emit('check', { done:true });
                         document.querySelector('a-scene').setAttribute('background','color:green;');
-                        document.querySelector('a-scene').appendChild(complete);
 
                     }
                 else{
