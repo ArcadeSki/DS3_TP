@@ -18,6 +18,14 @@
         <!-- add your assets here -->
 
         <!-- audio -->
+        <!--Music-->
+
+        <audio id="Ontario_music" src="/worlds/WIT_2_Lab/assets/audio/music/deep-ambient.mp3" preload="auto" crossorigin="anonymous"></audio>
+
+        <!--music end-->
+
+
+
         
         <!-- narration -->
         <audio id="Narr_tools-snd" src="/worlds/WIT_2_Lab/assets/audio/Narr_WIT_2_Drill.mp3" preload="true"></audio>
@@ -81,9 +89,10 @@
       <a-entity light="type:ambient; color:#FFF; intensity:3.0"></a-entity>
 
       <!-- sounds -->
-      <a-entity position="7.5 1.0 4.7" circles-sound="type:ambient; src:#Amb_fan-snd; autoplay:true; loop:true; volume:0.1;" ></a-entity>
+      <!-- <a-entity position="7.5 1.0 4.7" circles-sound="type:ambient; src:#Amb_fan-snd; autoplay:true; loop:true; volume:0.1;" ></a-entity>
       <a-entity position="7.5 1.0 -4.7" circles-sound="type:ambient; src:#Amb_voices-snd; autoplay:true; loop:true; volume:0.1;" ></a-entity>
-      <a-entity position="-4.3 2.3 -3.7" circles-sound="type:ambient; src:#Amb_extractor-snd; autoplay:true; loop:true; volume:0.4;" ></a-entity>
+      <a-entity position="-4.3 2.3 -3.7" circles-sound="type:ambient; src:#Amb_extractor-snd; autoplay:true; loop:true; volume:0.4;" ></a-entity> -->
+      <a-entity circles-sound="type:music; src:#Ontario_music; autoplay:true; loop:true; volume:0.5;"></a-entity>
 
       <!-- environment / models -->
       <a-entity id="TestBench_model" gltf-model="#TestBench-gltf" circles-sphere-env-map="src:/global/assets/textures/equirectangular/WhiteBlue.jpg" postion="0 0 0" rotation="0 0 0" scale="1 1 1" shadow="receive:false; cast:false;"></a-entity>
