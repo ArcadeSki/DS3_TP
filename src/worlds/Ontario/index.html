@@ -81,14 +81,9 @@
       <a-entity position="0 0 -4" circles-sound="type:ambient; src:#Amb_suburb-snd; autoplay:true; loop:true; volume:0.1;" ></a-entity>
       <a-entity circles-sound="type:music; src:#Quebec_music; autoplay:true; loop:true; volume:0.1;"></a-entity>
 
-      
-      
-      <!-- <a-entity position="-2.895 1 1.164" circles-sound="type:ambient; src:#Amb_kitchen-snd; autoplay:true; loop:true; volume:0.7;" ></a-entity> -->
 
-
-      <a-entity id="SetHint" position="3.079 0.927 1.043" geometry="primitive: plane; width: 1.5" rotation="-90 126.767 0" scale="0.608 0.79 0.608" material="src:#SetHint">
-      </a-entity>
-
+      <a-entity id="SetHint" position="3.079 0.927 1.043" geometry="primitive: plane; width: 1.5" 
+                rotation="-90 126.767 0" scale="0.608 0.79 0.608" material="src:#SetHint"></a-entity>
 
       <!-- CAMERA BUTTON -->
       <a-entity position="3.32 0 -0.11">
@@ -113,8 +108,6 @@
                 position="-1.9 0.05 -1.7" material="opacity:0.25;"></a-entity>
 
       <!---ADDING ARTEFACT NARRATION HERE-->
-
-      <!--TESTING THIS ONE SPECIFICALLY-->
       <a-entity class="Artefact-Headphones"
                 gltf-model="#headphones-gltf"
                 position="6.55 1 -1" scale="8 8 8"
@@ -158,23 +151,6 @@
                                   description:This is a Canada Post mailbox from the 1970s. This mailbox, finished in red enamel paint, was a marker in Canada Post’s history as they began to mechanise their sorting process.;
                                   label_text:Mailbox;"
                 grnd-placeable></a-entity>
-
-      <!-- <a-entity class="Artefact-Keys"
-                                  position="-2.56 0.978 -1.09" rotation="-90 45.000 0" scale="1.3 1.3 1.3"
-                                  gltf-model="#keys-gltf"
-                                  geometry="primitive:box; height:0.1; width:0.5; depth:0.5;" 
-
-                                  circles-sphere-env-map="src:#skyMap"
-                                  circles-artefact="inspectScale:5 5 5; textRotationY:90.0; inspectRotation:0 0 0;
-                                  label_offset:0.0 0.5 0.0; arrow_position:down;
-                                  title:Keys to the Future;
-                                  description:'When I was young, the options my parents had were limited. They needed to work long hours for this shop, but I need to find my own path. Maybe my love of working with my hands and building could help automate areas in the shop.';
-                                  title_back:Not Her Future;
-                                  description_back:The years of dedication and hardship her parents fought through are felt in those shop keys. She passes them daily, reassuring herself that is not her path. Yet her parents quickly formed a decision to follow their footsteps and continue the legacy.;
-                                  label_on:false;
-                                  audio:#Narr_Mailbox-ENG; volume:1;"></a-entity> -->
-
-      <!-- <a-entity id="navmesh" gltf-model="#navmesh_gltf" visible='false' nav-mesh></a-entity> -->
 
     </a-scene>
 
