@@ -19,12 +19,13 @@
       <a-assets>
         <!-- add your assets here -->
         <img id='skyMap' src='/global/assets/textures/equirectangular/WhiteBlue.jpg' crossorigin="anonymous">
-        <img id='SetHint' src='/global/assets/textures/equirectangular/QuebecHint.png' crossorigin="anonymous">
+        <img id='SetHint' src='/global/assets/textures/equirectangular/OntarioHint.png' crossorigin="anonymous">
 
         <!-- 360 -->
         <img id='link_1_360' src='/global/images/Campfire_Screen.jpg' crossorigin="anonymous">
 
         <!-- <a-asset-item id="navmesh_gltf" src="/worlds/WIT_1_Kitchen/assets/models/wit-1-nav.glb" response-type="arraybuffer" crossorigin="anonymous"></a-asset-item> -->
+        <a-asset-item id="ROOM-gltf" response-type="arraybuffer" src="/worlds/WIT_1_Kitchen/assets/models/Test2.glb"></a-asset-item>
         <a-asset-item id="small-gltf" response-type="arraybuffer" src="/worlds/Ontario/assets/models/GLTF_ONTARIO_V000_NoNormals.glb"></a-asset-item>
 
         <!-- artefact models
@@ -75,15 +76,26 @@
 
       <!-- sky and lights -->
       <!-- bad place for narrative manager but :) -->
-      <a-entity light="type:ambient; color:#FFF; intensity:3.0"></a-entity>
+      <a-entity id="RoomLight" light="type:ambient; color:#FFF; intensity:0.65;  "></a-entity>
+      <a-entity id="RoomLight-2" light="type: spot; intensity: 18.52; angle: 45;  shadowBias: 0.029; color: #fffeeb; penumbra: 1" position="-1 5.7 -1.7" rotation="-84.75764663370268 179.9998479605043 179.9998479605043"></a-entity>
+      <a-entity id="RoomLight-3" light="type: spot; intensity: 15.59; angle: 45;  shadowBias: 0.029; color: #fffeeb; penumbra: 1; distance: 4.55" position="6.6 4.6 -0.35" rotation="-84.75764663370268 179.9998479605043 179.9998479605043"></a-entity>
+      <a-entity id="RoomLight-4" light="type: spot; intensity: 7.92; angle: 45; shadowBias: 0.019; penumbra: 1; color: #fffeeb; distance: 4.55" position="4.6 3.9 -4.7" rotation="-90 0 0"></a-entity>
+      <a-entity id="RoomLight-5" light="type: spot; intensity: 7.92; angle: 45;  shadowBias: 0.019; penumbra: 1; color: #fffeeb; distance: 4.55" position="7.3 3.9 5.3" rotation="-90 0 0"></a-entity>
+      <a-entity id="RoomLight-6" light="type: spot; intensity: 5.61; angle: 45;  shadowBias: 0.019; penumbra: 1; color: #e1f8fe; distance: 7.05" position="3.4 2.3 0.15" rotation="-90 0 0"></a-entity>
+
 
       <!-- sounds -->
       <a-entity position="0 0 -4" circles-sound="type:ambient; src:#Amb_suburb-snd; autoplay:true; loop:true; volume:0.1;" ></a-entity>
       <a-entity circles-sound="type:music; src:#Quebec_music; autoplay:true; loop:true; volume:0.1;"></a-entity>
 
 
-      <a-entity id="SetHint" position="3.079 0.927 1.043" geometry="primitive: plane; width: 1.5" 
-                rotation="-90 126.767 0" scale="0.608 0.79 0.608" material="src:#SetHint"></a-entity>
+      <!-- Hint Board Prop -->
+      <a-entity position="2.88714 1.35139 0.84564" scale="0.0367 1 1" rotation="0 0 35" material="color: #8c8c8c" id="Hint_Board" geometry="primitive:box">
+        <a-entity id="SetHint"geometry="primitive: plane; width: 1.5" position=".57 .004 0" rotation="0 90 0" scale=".66 .993 1" material="src:#SetHint">
+        </a-entity>
+      </a-entity>
+      <a-entity geometry="primitive:box" position="2.619 1.316 0.868" scale="0.025 0.861 0.152" material="color: #616161"></a-entity>
+      </a-entity>
 
       <!-- CAMERA BUTTON -->
       <a-entity position="3.32 0 -0.11">
@@ -95,10 +107,16 @@
       </a-entity>
 
       <!--QUEBEC ROOM MODEL-->
-      <a-entity id="room_model" gltf-model="#ON-gltf" circles-sphere-env-map="src:#skyMap" 
+      <a-entity id="room_model" gltf-model="#ROOM-gltf" 
                 postion="0 0 0" rotation="0 0 0" scale="4.5 4.5 4.5" shadow="receive:false; cast:false;">
-        <a-entity id="set_model" gltf-model="#small-gltf" circles-sphere-env-map="src:#skyMap" 
+        <a-entity id="set_model" gltf-model="#small-gltf"
                   shadow="receive:false; cast:false;"></a-entity>
+      </a-entity>
+
+      <a-entity id="room_model_extra_pieces" shadow="receive:true; cast:true;">
+        <a-entity geometry="" id="Ceiling_Slate" position="-3.76 5.59 -0.262" scale="3.4 0.09 11.4" material="color: #918383"></a-entity>
+        <a-entity geometry="" id="Ceiling_Slate-2" position="5.60862 5.59 -0.262" scale="3.4 0.09 11.4" material="color: #918383"></a-entity>
+        <a-entity geometry="" id="Ceiling_Slate-3" position="0.83912 5.59 -0.262" scale="3.4 0.09 11.4" material="color: #918383"></a-entity>
       </a-entity>
       
       <!-- PLACES TO PUT OBJECTS -->
