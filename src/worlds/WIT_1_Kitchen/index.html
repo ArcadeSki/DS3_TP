@@ -19,6 +19,7 @@
       <a-assets>
         <!-- add your assets here -->
         <img id='skyMap' src='/global/assets/textures/equirectangular/WhiteBlue.jpg' crossorigin="anonymous">
+        <img id='SetHint' src='/global/assets/textures/equirectangular/QuebecHint.png' crossorigin="anonymous">
 
         <!-- 360 -->
         <img id='link_1_360' src='/global/images/Campfire_Screen.jpg' crossorigin="anonymous">
@@ -35,6 +36,9 @@
 
         <!-- audio -->
         <audio id="Quebec_music" src="/worlds/WIT_1_Kitchen/assets/audio/slow-travel.wav" preload="auto" crossorigin="anonymous"></audio>
+
+
+        
 
         <!-- narration -->
         
@@ -104,7 +108,8 @@
       <!-- <a-entity position="-2.895 1 1.164" circles-sound="type:ambient; src:#Amb_kitchen-snd; autoplay:true; loop:true; volume:0.7;" ></a-entity> -->
 
 
-
+      <a-entity id="SetHint" position="3.079 0.927 1.043" geometry="primitive: plane; width: 1.5" rotation="-90 126.767 0" scale="0.608 0.79 0.608" material="src:#SetHint">
+      </a-entity>
 
 
       <!-- CAMERA BUTTON -->
