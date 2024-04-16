@@ -1,0 +1,184 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+
+    <!-- Circles' head scripts [REQUIRED] -->
+    <circles-start-scripts/>
+    
+    <script src="/worlds/BasicStart/components/grnd_placeable.js"></script>
+    <script src="/worlds/BasicStart/components/checkLayout.js"></script>
+    <!-- add your custom scripts here -->
+    <!-- <script src="/worlds/hub/scripts/hub.js"></script> -->
+  </head>
+  <body>
+    <!-- this is used to create our enter UI that creates a 2D overlay to capture a user gesture for sound/mic access etc. -->
+    <circles-start-ui/>
+
+    <!-- a-scene with 'circles-properties' component [REQUIRED] -->
+    <a-scene circles_scene_properties>
+      <a-assets>
+        <!-- add your assets here -->
+        <img id='skyMap' src='/global/assets/textures/equirectangular/WhiteBlue.jpg' crossorigin="anonymous">
+        <img id='SetHint' src='/global/assets/textures/equirectangular/QuebecHint.png' crossorigin="anonymous">
+
+        <!-- 360 -->
+        <img id='link_1_360' src='/global/images/Campfire_Screen.jpg' crossorigin="anonymous">
+
+        <!-- <a-asset-item id="navmesh_gltf" src="/worlds/WIT_1_Kitchen/assets/models/wit-1-nav.glb" response-type="arraybuffer" crossorigin="anonymous"></a-asset-item> -->
+        <a-asset-item id="small-gltf" response-type="arraybuffer" src="/worlds/Ontario/assets/models/GLTF_ONTARIO_V000_NoNormals.glb"></a-asset-item>
+
+        <!-- artefact models
+        <a-asset-item id="mailbox-gltf" response-type="arraybuffer" src="/worlds/WIT_1_Kitchen/assets/models/mailBox_v003.glb"></a-asset-item>
+        <a-asset-item id="headphones-gltf" response-type="arraybuffer" src="/worlds/WIT_1_Kitchen/assets/models/headphones.glb"></a-asset-item>-->
+
+        <!-- <a-asset-item id="Drill-gltf" src="/worlds/WIT_1_ElectricLab/assets/models/Drill.glb" response-type="arraybuffer"></a-asset-item> -->
+
+        <!-- audio -->
+        <audio id="Quebec_music" src="/worlds/Ontario/assets/audio/slow-travel.wav" preload="auto" crossorigin="anonymous"></audio>
+
+        <!-- narration -->
+
+        <!-- HEADPHONES NARRATION -->
+        <audio id="Narr_Headphones-FR" src="/worlds/WIT_1_Kitchen/assets/audio/Recordings/headphone_FRE.wav" preload="true"></audio>
+        <audio id="Narr_Headphones-ENG" src="/worlds/WIT_1_Kitchen/assets/audio/Recordings/Headphone_ENG.mp3" preload="true"></audio>
+        
+        <!-- JACKET NARRATION -->
+        <audio id="Narr_Jacket-ENG" src="/worlds/WIT_1_Kitchen/assets/audio/Recordings/Jacket_ENG.wav" preload="true"></audio>
+        <audio id="Narr_Jacket-FR" src="/worlds/WIT_1_Kitchen/assets/audio/Recordings/Jacket_FRE.wav" preload="true"></audio>
+        <!-- MAILBOX NARRATION -->
+        <audio id="Narr_Mailbox-ENG" src="/worlds/WIT_1_Kitchen/assets/audio/Recordings/Maibox_ENG.wav" preload="true"></audio>
+        <audio id="Narr_Mailbox-FR" src="/worlds/WIT_1_Kitchen/assets/audio/Recordings/Mailbox_FRE.wav" preload="true"></audio>
+        <!-- RADIO NARRATION -->
+        <audio id="Narr_Radio-ENG" src="/worlds/WIT_1_Kitchen/assets/audio/Recordings/Radio_ENG.wav" preload="true"></audio>
+        <audio id="Narr_Radio-ENG" src="/worlds/WIT_1_Kitchen/assets/audio/Recordings/Radio_ENG.wav" preload="true"></audio>
+
+
+        <!-- ambience -->
+
+        <!-- credit: tosha73 @ https://freesound.org/people/tosha73/sounds/496209/  -->
+<!-- <audio id="Amb_suburb-snd" src="/worlds/WIT_1_Kitchen/assets/audio/Amb_Suburb.mp3"></audio> -->
+
+        <!-- credit: yahaveva @ https://freesound.org/people/yahaveva/sounds/444844/ -->
+<!-- <audio id="Amb_kitchen-snd" src="/worlds/WIT_1_Kitchen/assets/audio/Amb_Kitchen.mp3"></audio> -->
+
+        <!-- Circles' built-in assets [REQUIRED] -->
+        <circles-assets/>
+      </a-assets>
+
+      <!-- Circles' built-in manager and avatar [REQUIRED] -->
+      <circles-manager-avatar/>
+
+      <!-- checkpoints -->
+      <a-entity id="pyro-mat" class='tp' circles-checkpoint position="0.05 0.08 -1.6"></a-entity>
+
+      <a-entity circles-checkpoint circles-spawnpoint position="3.5 0.05 -2.8"></a-entity>
+
+      <!-- sky and lights -->
+      <!-- bad place for narrative manager but :) -->
+      <a-entity light="type:ambient; color:#FFF; intensity:3.0"></a-entity>
+
+      <!-- sounds -->
+      <a-entity position="0 0 -4" circles-sound="type:ambient; src:#Amb_suburb-snd; autoplay:true; loop:true; volume:0.1;" ></a-entity>
+      <a-entity circles-sound="type:music; src:#Quebec_music; autoplay:true; loop:true; volume:0.1;"></a-entity>
+
+      
+      
+      <!-- <a-entity position="-2.895 1 1.164" circles-sound="type:ambient; src:#Amb_kitchen-snd; autoplay:true; loop:true; volume:0.7;" ></a-entity> -->
+
+
+      <a-entity id="SetHint" position="3.079 0.927 1.043" geometry="primitive: plane; width: 1.5" rotation="-90 126.767 0" scale="0.608 0.79 0.608" material="src:#SetHint">
+      </a-entity>
+
+
+      <!-- CAMERA BUTTON -->
+      <a-entity position="3.32 0 -0.11">
+        <a-entity position="0 1.55 0" class='interactive' geometry="primitive:cylinder; height:0.2; radius:0.05;" 
+                  material="color:rgb(255,50,50);" onclick="check_ontario();"
+                  animation__mouseenter="property:material.color; type:color; to:rgb(255, 0, 0); startEvents:mouseenter; dur:200"
+                  animation__mouseleave="property:material.color; type:color; to:rgb(255, 50, 50); startEvents:mouseleave; dur:200"
+                  animation__click="property:position.y; from:1.5; to:1.55; startEvents:click; dur:300"></a-entity>
+      </a-entity>
+
+      <!--QUEBEC ROOM MODEL-->
+      <a-entity id="room_model" gltf-model="#ON-gltf" circles-sphere-env-map="src:#skyMap" 
+                postion="0 0 0" rotation="0 0 0" scale="4.5 4.5 4.5" shadow="receive:false; cast:false;">
+        <a-entity id="set_model" gltf-model="#small-gltf" circles-sphere-env-map="src:#skyMap" 
+                  shadow="receive:false; cast:false;"></a-entity>
+      </a-entity>
+      
+      <!-- PLACES TO PUT OBJECTS -->
+      <a-entity class='mat Artefact-Headphones' geometry="primitive:box; height:0.1; width:0.3; depth:0.3;"
+                position="-0.2 1.1 -3.25" material="opacity:0.25;"></a-entity>
+      <a-entity class='mat Artefact-Mailbox' geometry="primitive:box; height:0.1; width:0.3; depth:0.3;"
+                position="-1.9 0.05 -1.7" material="opacity:0.25;"></a-entity>
+
+      <!---ADDING ARTEFACT NARRATION HERE-->
+
+      <!--TESTING THIS ONE SPECIFICALLY-->
+      <a-entity class="Artefact-Headphones"
+                gltf-model="#headphones-gltf"
+                position="6.55 1 -1" scale="8 8 8"
+                rotation="0 0 90"
+                circles-sphere-env-map="src:#skyMap"
+                circles-artefact="inspectScale:10 10 10; textRotationY:0.0; inspectRotation:0 0 0;
+                                  label_offset:0.0 0.5 0.0; arrow_position:down;
+                                  title:Headphones;
+                                  descriptionLookAt:true;
+                                  description: These are antique headphones the Canadian embassy uses for radio calls. Made in the 1920’s, and manufactured by Simplex telephone & radio MFG.CO, these headphones were designed for sensitive and balanced  audio, these were essential, and a technological marvel.;
+                                  label_text:Headphones;"
+                grnd-placeable="dropRot:0 0 90"></a-entity>
+
+        <!-- Panel Headphones -->
+      <a-entity id="panel" geometry="primitive:box; width:0.8; height:0.2; depth:0.8" position="6.8 1.7 -1.7 " 
+                rotation="0 0 90" material="color:rgb(30, 50, 70)">
+        <!-- ENGLISH -->
+        <a-entity position="-0.2 0.1 0.2" class='interactive' geometry="primitive:cylinder; height:0.2; radius:0.1;" 
+                  material="color:rgb(50, 50, 255);" sound="on: click; src: #Narr_Headphones-ENG; volume:1;"
+                  animation__mouseenter="property:material.color; type:color; to:rgb(0, 0, 200); startEvents:mouseenter; dur:150"
+                  animation__mouseleave="property:material.color; type:color; to:rgb(50, 50, 255); startEvents:mouseleave; dur:150"
+                  animation__click="property:position; from:-0.2 0.04 0.2; to:-0.2 0.1 0.2; startEvents:click; dur:300"></a-entity>
+
+        <!-- FRENCH -->
+        <a-entity position="-0.2 0.1 -0.2" class='interactive' geometry="primitive:cylinder; height:0.2; radius:0.1;" 
+                  material="color:rgb(50, 255, 50);" sound="on: click; src: #Narr_Headphones-FR; volume:1;"
+                  animation__mouseenter="property:material.color; type:color; to:rgb(0, 200, 0); startEvents:mouseenter; dur:150"
+                  animation__mouseleave="property:material.color; type:color; to:rgb(50, 255, 50); startEvents:mouseleave; dur:150"
+                  animation__click="property:position; from:-0.2 0.04 -0.2; to:-0.2 0.1 -0.2; startEvents:click; dur:300"></a-entity>
+      </a-entity>
+
+      <a-entity class="Artefact-Mailbox"
+                gltf-model="#mailbox-gltf"
+                position="4 0.4 -4.2" scale="0.28 0.28 0.28"
+                circles-sphere-env-map="src:#skyMap"
+                circles-artefact="inspectScale:0.3 0.3 0.3; textRotationY:0.0;
+                                  inspectRotation:0 -90 0; inspectPosition:0 -0.5 0;
+                                  label_offset:0.0 1.8 0.0; arrow_position:down;
+                                  title:1970's Mailbox;
+                                  descriptionLookAt:true;
+                                  description:This is a Canada Post mailbox from the 1970s. This mailbox, finished in red enamel paint, was a marker in Canada Post’s history as they began to mechanise their sorting process.;
+                                  label_text:Mailbox;"
+                grnd-placeable></a-entity>
+
+      <!-- <a-entity class="Artefact-Keys"
+                                  position="-2.56 0.978 -1.09" rotation="-90 45.000 0" scale="1.3 1.3 1.3"
+                                  gltf-model="#keys-gltf"
+                                  geometry="primitive:box; height:0.1; width:0.5; depth:0.5;" 
+
+                                  circles-sphere-env-map="src:#skyMap"
+                                  circles-artefact="inspectScale:5 5 5; textRotationY:90.0; inspectRotation:0 0 0;
+                                  label_offset:0.0 0.5 0.0; arrow_position:down;
+                                  title:Keys to the Future;
+                                  description:'When I was young, the options my parents had were limited. They needed to work long hours for this shop, but I need to find my own path. Maybe my love of working with my hands and building could help automate areas in the shop.';
+                                  title_back:Not Her Future;
+                                  description_back:The years of dedication and hardship her parents fought through are felt in those shop keys. She passes them daily, reassuring herself that is not her path. Yet her parents quickly formed a decision to follow their footsteps and continue the legacy.;
+                                  label_on:false;
+                                  audio:#Narr_Mailbox-ENG; volume:1;"></a-entity> -->
+
+      <!-- <a-entity id="navmesh" gltf-model="#navmesh_gltf" visible='false' nav-mesh></a-entity> -->
+
+    </a-scene>
+
+    <!-- Circles' end scripts [REQUIRED] -->
+    <circles-end-scripts/>
+  </body>
+</html>
