@@ -17,6 +17,14 @@
       <!-- a-scene with 'circles-properties' component [REQUIRED] -->
       <a-scene circles_scene_properties>
         <a-assets>
+          
+          <!--TESTING LIGHTS-->
+          <!-- <a-entity light="type: point; intensity: 0.75; distance: 50; decay: 2"
+          position="0 10 10"></a-entity> -->
+
+<!--  -->
+
+
 
           <a-asset-item id="museum" response-type="arraybuffer" src="/worlds/BasicStart/assets/InnovationLab_rebuild_v008.glb"></a-asset-item>
           <a-asset-item id="test-gltf" response-type="arraybuffer" src="/worlds/BasicStart/assets/Test.glb"></a-asset-item>
@@ -39,6 +47,16 @@
         <circles-manager-avatar/>
 
         <!-- OBJECTS --> 
+
+        <a-entity id="spotlight1" light="type:spot; intensity:9.0; color:#feffeb; angle:80; penumbra:0.1;" circles-platform-shadows rotation="-90 0 0" position='-1.5 6 2'></a-entity>
+        <a-entity id="spotlight2" light="type:spot; intensity:9.0; color:#feffeb; angle:80; penumbra:0.1;" circles-platform-shadows rotation="-90 0 0" position='-11y 6 2'></a-entity>
+        <a-entity id="spotlight3" light="type:spot; intensity:9.0; color:#feffeb; angle:80; penumbra:0.1;" circles-platform-shadows rotation="-90 0 0" position='-11 6 -13'></a-entity>
+        <a-entity id="spotlight4" light="type:spot; intensity:9.0; color:#feffeb; angle:80; penumbra:0.1;" circles-platform-shadows rotation="-90 0 0" position='-1.5 6 -18'></a-entity>
+        <a-entity id="spotlight5" light="type:spot; intensity:9.0; color:#feffeb; angle:80; penumbra:0.1;" circles-platform-shadows rotation="-90 0 0" position='-8.5 6 -18'></a-entity>
+
+
+
+
         <a-entity class="box" geometry="primitive:box; width:0.2; height:0.2; depth:0.2;" 
                   material="color:rgb(100, 250, 55)" position="-4 0 2" 
                   circles-artefact="textRotationY:0.0; inspectRotation:0 0 0;
