@@ -5,26 +5,25 @@ AFRAME.registerComponent('tutorial-done', {
 
     },
     init:function(){
-        data = this.data;
+        let data = this.data;
         let socket = io();
 
-        socket.on('connect',(tutDone) => {
-            socket.emit('check', { done:tutDone.complete });
+        socket.on('join',(userData) => {
+            console.log('here');
+            socket.emit('check', { done:userData.complete });
         });
 
         socket.on('check',(tut) => {
-            if (tut.done === true)
-            {
-                //turn portal on
-                let complete = document.createElement('a-entity');
+            //turn portal on
+            let complete = document.createElement('a-entity');
 
-                complete.setAttribute('position','-4.8 1.5 3.8');
-                complete.setAttribute('rotation','0 0 0');
-                complete.setAttribute('circles-portal','title_text:Lab; link_url:/w/BasicStart');
+            complete.setAttribute('position','-4.8 1.5 3.8');
+            complete.setAttribute('rotation','0 0 0');
+            complete.setAttribute('id','port');
+            complete.setAttribute('circles-portal','title_text:Lab; link_url:/w/BasicStart');
 
-                document.querySelector('a-scene').setAttribute('background','color:green;');
-                document.querySelector('a-scene').appendChild(complete);
-            }
+            document.querySelector('a-scene').setAttribute('background','color:green;');
+            document.querySelector('a-scene').appendChild(complete);
         });
     }
 
@@ -62,12 +61,11 @@ function check_ingenium(){
                 if( (obj3[0].getAttribute('position').x === obj3[1].getAttribute('position').x) &&
                     (obj3[0].getAttribute('position').y === obj3[1].getAttribute('position').y) &&
                     (obj3[0].getAttribute('position').z === obj3[1].getAttribute('position').z))
-                    {
-                        console.log('Ingenium set is looking good');
-                        socket.emit('check', { done:true });
-                        document.querySelector('a-scene').setAttribute('background','color:green;');
-
-                    }
+                {
+                    console.log('Ingenium set is looking good');
+                    socket.emit('check', { done:true });
+                    document.querySelector('a-scene').setAttribute('background','color:green;');
+                }
                 else{
                     console.log('WRONG');
                     document.querySelector('a-scene').setAttribute('background','color:red;');

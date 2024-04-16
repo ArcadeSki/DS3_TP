@@ -95,7 +95,7 @@
 
         <a-entity geometry="primitive:box; height:1; width:0.5; depth:0.5;" position="-3 0.5 -10" material="color:white;">
           <a-entity class="interactive" onclick="check_ingenium()" geometry="primitive:cylinder; height:0.4; radius:0.2;" position="0 0.5 0" 
-                    material="color:rgb(255, 100, 100);"
+                    material="color:rgb(255, 100, 100);" tutorial-done
                     animation__mouseenter="property:material.color; type:color; to:rgb(255, 0, 0); startEvents:mouseenter; dur:200"
                     animation__mouseleave="property:material.color; type:color; to:rgb(255, 50, 50); startEvents:mouseleave; dur:200"
                     animation__click="property:position.y; from:0.4; to:0.5; startEvents:click; dur:300"></a-entity>
