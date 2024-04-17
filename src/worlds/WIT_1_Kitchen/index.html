@@ -27,7 +27,7 @@
 
         <!-- ROOM ASSETS -->
         <a-asset-item id="test-gltf" response-type="arraybuffer" src="/worlds/WIT_1_Kitchen/assets/models/Test2.glb"></a-asset-item>
-        <a-asset-item id="small-gltf" response-type="arraybuffer" src="/worlds/WIT_1_Kitchen/assets/models/GLTF_Quebec_V000.glb"></a-asset-item>
+        <a-asset-item id="small-gltf" response-type="arraybuffer" src="/worlds/WIT_1_Kitchen/assets/models/GLTF_Quebec_MiniSet.glb"></a-asset-item>
 
         <!-- Artifact Models. All models are available in all levels, but only a selection of them are valid to complete a given level -->
         <!-- QUEBEC ARTIFACTS ASSETS-->
@@ -127,13 +127,13 @@
       <!--QUEBEC ROOM MODEL-->
       <a-entity id="room_model" gltf-model="#test-gltf"  
                 postion="0 0 0" rotation="0 0 0" scale="4.5 4.5 4.5" shadow="receive:true; cast:true;">
-        <a-entity id="set_model" gltf-model="#small-gltf"  
-                  shadow="receive:true; cast:true;"></a-entity>
       </a-entity>
+      <a-entity id="set_model" gltf-model="#small-gltf"  
+                position="0.3 0 -0.35" rotation="0 0 0" scale="0.68 0.68 0.68" shadow="receive:true; cast:true;"></a-entity>
       
       <!-- PLACES TO PUT OBJECTS -->
       <a-entity class='mat Artefact-Headphones' geometry="primitive:box; height:0.1; width:0.3; depth:0.3;"
-                position="-0.2 1.1 -3.25" material="opacity:0.25;"></a-entity>
+                position="-0.3 1.1 -3.25" material="opacity:0.25;"></a-entity>
       <a-entity class='mat Artefact-Mailbox' geometry="primitive:box; height:0.1; width:0.3; depth:0.3;"
                 position="-1.9 0.05 -1.7" material="opacity:0.25;"></a-entity>
       <a-entity class='mat Artefact-Jacket' geometry="primitive:box; height:1.0; width:0.1; depth:0.5;"
