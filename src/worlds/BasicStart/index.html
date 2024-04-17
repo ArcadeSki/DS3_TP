@@ -58,8 +58,17 @@
         <a-entity id="spotlight5" light="type:spot; intensity:9.0; color:#feffeb; angle:80; penumbra:0.1;" circles-platform-shadows rotation="-90 0 0" position='-8.5 6 -18'></a-entity>
 
 
-
-
+        <!-- SKIP TUTORIAL -->
+        <a-entity geometry="primitive:box; height:0.4; width:2; depth:0.8;" position="-1 0.8 0" 
+                  rotation="0 0 90" material="color:rgb(150, 150, 150);">
+          <a-entity position="0.6 0.2 0">
+            <a-entity class="interactive" onclick="spawnQB()" geometry="primitive:cylinder; height:0.4; radius:0.2;" material="color:rgb(255, 100, 100);"
+                    animation__mouseenter="property:material.color; type:color; to:rgb(255, 0, 0); startEvents:mouseenter; dur:200"
+                    animation__mouseleave="property:material.color; type:color; to:rgb(255, 50, 50); startEvents:mouseleave; dur:200"
+                    animation__click="property:position.y; from:-0.1; to:0; startEvents:click; dur:300"></a-entity>
+          </a-entity>
+        </a-entity>
+        
         <a-entity class="box" geometry="primitive:box; width:0.2; height:0.2; depth:0.2;" 
                   material="color:rgb(100, 250, 55)" position="-4 0 2" 
                   circles-artefact="textRotationY:0.0; inspectRotation:0 0 0;
