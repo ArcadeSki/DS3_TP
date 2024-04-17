@@ -33,15 +33,19 @@ AFRAME.registerComponent('grnd-placeable', {
             //if user is on a teleport point, release sends the object to the corresponding position
             if( (playerPos.x === greens[0].object3D.position.x) &&
                 (playerPos.z === greens[0].object3D.position.z))
-                { CONTEXT_AF.el.setAttribute('circles-artefact', {origPosition: mats[0].object3D.position}); } //object goes on red mat
+                { CONTEXT_AF.el.setAttribute('circles-artefact', {origPosition: mats[0].object3D.position}); } //object goes on first mat
 
             else if((playerPos.x === greens[1].object3D.position.x) &&
                     (playerPos.z === greens[1].object3D.position.z))
-            { CONTEXT_AF.el.setAttribute('circles-artefact', {origPosition: mats[1].object3D.position}); } //object goes on green mat
+            { CONTEXT_AF.el.setAttribute('circles-artefact', {origPosition: mats[1].object3D.position}); } //object goes on second mat
 
             else if((playerPos.x === greens[2].object3D.position.x) &&
                     (playerPos.z === greens[2].object3D.position.z))
-            { CONTEXT_AF.el.setAttribute('circles-artefact', {origPosition: mats[2].object3D.position}); } //we have two objects in the scene right now
+            { CONTEXT_AF.el.setAttribute('circles-artefact', {origPosition: mats[2].object3D.position}); } //object goes on third mat
+
+            else if((playerPos.x === greens[3].object3D.position.x) &&
+                    (playerPos.z === greens[3].object3D.position.z))
+            { CONTEXT_AF.el.setAttribute('circles-artefact', {origPosition: mats[3].object3D.position}); } //object goes on fourth mat
 
             //if user is not on a teleport point, release sends the object to its inital position
             else{ CONTEXT_AF.el.setAttribute('circles-artefact', {origPosition: CONTEXT_AF.data.initialPos}); }
