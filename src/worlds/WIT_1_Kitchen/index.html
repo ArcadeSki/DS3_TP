@@ -28,10 +28,23 @@
         <a-asset-item id="test-gltf" response-type="arraybuffer" src="/worlds/WIT_1_Kitchen/assets/models/Test2.glb"></a-asset-item>
         <a-asset-item id="small-gltf" response-type="arraybuffer" src="/worlds/WIT_1_Kitchen/assets/models/GLTF_Quebec_V000.glb"></a-asset-item>
 
-        <!-- artefact models -->
+        <!-- Artifact Models. All models are available in all levels, but only a selection of them are valid to complete a given level -->
+
+        <!-- QUEBEC ARTIFACTS -->
         <a-asset-item id="mailbox-gltf" response-type="arraybuffer" src="/worlds/WIT_1_Kitchen/assets/models/mailBox_v003.glb"></a-asset-item>
         <a-asset-item id="headphones-gltf" response-type="arraybuffer" src="/worlds/WIT_1_Kitchen/assets/models/headphones.glb"></a-asset-item>
+        
+        
+        <a-asset-item id="pyrodene-gltf" response-type="arraybuffer" src="/worlds/WIT_1_Kitchen/assets/models/Pyrodene.glb"></a-asset-item>
+        <a-asset-item id="chemblender-gltf" response-type="arraybuffer" src="/worlds/WIT_1_Kitchen/assets/models/Chemblender.glb"></a-asset-item>
 
+
+
+
+
+
+
+        <a-asset-item id="walkietalkie-gltf" response-type="arraybuffer" src="/worlds/WIT_1_Kitchen/assets/models/GLB_WalkieTalkie.glb"></a-asset-item>
         <!-- <a-asset-item id="Drill-gltf" src="/worlds/WIT_1_ElectricLab/assets/models/Drill.glb" response-type="arraybuffer"></a-asset-item> -->
 
         <!-- audio -->
@@ -49,18 +62,29 @@
         
 
         <!-- HEADPHONES NARRATION -->
-        <audio id="Narr_Headphones-FR" src="/worlds/WIT_1_Kitchen/assets/audio/Recordings/headphone_FRE.wav" preload="true"></audio>
-        <audio id="Narr_Headphones-ENG" src="/worlds/WIT_1_Kitchen/assets/audio/Recordings/Headphone_ENG.mp3" preload="true"></audio>
+        <audio id="Narr_Headphones-ENG" src="/worlds/WIT_1_Kitchen/assets/audio/Recordings/Headphone_ENG.mp3" preload="true" crossorigin="anonymous"></audio>
+        <audio id="Narr_Headphones-FR" src="/worlds/WIT_1_Kitchen/assets/audio/Recordings/headphone_FRE.wav" preload="true" crossorigin="anonymous"></audio>
         
         <!-- JACKET NARRATION -->
-        <audio id="Narr_Jacket-ENG" src="/worlds/WIT_1_Kitchen/assets/audio/Recordings/Jacket_ENG.wav" preload="true"></audio>
-        <audio id="Narr_Jacket-FR" src="/worlds/WIT_1_Kitchen/assets/audio/Recordings/Jacket_FRE.wav" preload="true"></audio>
+        <audio id="Narr_Jacket-ENG" src="/worlds/WIT_1_Kitchen/assets/audio/Recordings/Jacket_ENG.wav" preload="true" crossorigin="anonymous"></audio>
+        <audio id="Narr_Jacket-FR" src="/worlds/WIT_1_Kitchen/assets/audio/Recordings/Jacket_FRE.wav" preload="true" crossorigin="anonymous"></audio>
         <!-- MAILBOX NARRATION -->
-        <audio id="Narr_Mailbox-ENG" src="/worlds/WIT_1_Kitchen/assets/audio/Recordings/Maibox_ENG.wav" preload="true"></audio>
-        <audio id="Narr_Mailbox-FR" src="/worlds/WIT_1_Kitchen/assets/audio/Recordings/Mailbox_FRE.wav" preload="true"></audio>
+        <audio id="Narr_Mailbox-ENG" src="/worlds/WIT_1_Kitchen/assets/audio/Recordings/Maibox_ENG.wav" preload="true" crossorigin="anonymous"></audio>
+        <audio id="Narr_Mailbox-FR" src="/worlds/WIT_1_Kitchen/assets/audio/Recordings/Mailbox_FRE.wav" preload="true" crossorigin="anonymous"></audio>
         <!-- RADIO NARRATION -->
-        <audio id="Narr_Radio-ENG" src="/worlds/WIT_1_Kitchen/assets/audio/Recordings/Radio_ENG.wav" preload="true"></audio>
-        <audio id="Narr_Radio-ENG" src="/worlds/WIT_1_Kitchen/assets/audio/Recordings/Radio_ENG.wav" preload="true"></audio>
+        <audio id="Narr_Radio-ENG" src="/worlds/WIT_1_Kitchen/assets/audio/Recordings/Radio_ENG.wav" preload="true" crossorigin="anonymous"></audio>
+        <audio id="Narr_Radio-FR" src="/worlds/WIT_1_Kitchen/assets/audio/Recordings/Radio_FRE.wav" preload="true" crossorigin="anonymous"></audio>
+
+
+
+        <audio id="Narr_Pyrodene-ENG" src="/worlds/WIT_1_Kitchen/assets/audio/Recordings/PYRODENE_ENG.wav" preload="true" crossorigin="anonymous"></audio>
+        <audio id="Narr_Pyrodene-FR" src="/worlds/WIT_1_Kitchen/assets/audio/Recordings/PYRODENE_FRE.wav" preload="true" crossorigin="anonymous"></audio>
+
+        <audio id="Narr_Chemblender-ENG" src="/worlds/WIT_1_Kitchen/assets/audio/Recordings/CHEMBLENDER_ENG.wav" preload="true" crossorigin="anonymous"></audio>
+        <audio id="Narr_Chemblender-FR" src="/worlds/WIT_1_Kitchen/assets/audio/Recordings/CHEMBLENDER_FRE.wav" preload="true" crossorigin="anonymous"></audio>
+
+        <audio id="Narr_Flamethrower-ENG" src="/worlds/WIT_1_Kitchen/assets/audio/Recordings/FLAMETHROWER_ENG.wav" preload="true" crossorigin="anonymous"></audio>
+        <audio id="Narr_Flamethrower-FR" src="/worlds/WIT_1_Kitchen/assets/audio/Recordings/FLAMETHROWER_FRE.wav" preload="true" crossorigin="anonymous"></audio>
         
         <audio id="Narr_TEST" src="src/worlds/WIT_1_Kitchen/assets/audio/Narr_WIT_1_Keys.mp3" preload="true"></audio>
 
@@ -106,7 +130,7 @@
 
       <!-- sounds -->
       <a-entity position="0 0 -4" circles-sound="type:ambient; src:#Amb_suburb-snd; autoplay:true; loop:true; volume:0.1;" ></a-entity>
-      <a-entity circles-sound="type:music; src:#Quebec_music; autoplay:true; loop:true; volume:0.1;"></a-entity>
+      <a-entity circles-sound="type:music; src:#Quebec_music; autoplay:true; loop:true; volume:0.05;"></a-entity>
 
       
       
@@ -135,7 +159,9 @@
                   animation__click="property:position.y; from:1.5; to:1.55; startEvents:click; dur:300"></a-entity>
       </a-entity>
 
+      <!--  -->
       <!--QUEBEC ROOM MODEL-->
+      <!--  -->
       <!-- circles-sphere-env-map="src:#skyMap" -->
       <a-entity id="room_model" gltf-model="#test-gltf"  
                 postion="0 0 0" rotation="0 0 0" scale="4.5 4.5 4.5" shadow="receive:true; cast:true;">
@@ -156,6 +182,158 @@
 
       <!---ADDING ARTEFACT NARRATION HERE-->
 
+      <!-- HEADPHONE NARRATIONS -->
+      <a-entity id="HEADPHONE_ENG_NAR" 
+                gltf-model="/worlds/WIT_1_Kitchen/assets/models/GLB_WalkieTalkie.glb" 
+                class='interactive'
+                shadow="receive:true; cast:true"
+                rotation="-90 78.336 0"
+                position="6.35523 1.05061 -0.6167"
+                scale="4.62 4.62 4.62"
+                sound="on: click; src: #Narr_Headphones-ENG; volume:1;">
+      </a-entity>
+      <!-- CHANGE TO ORANGE WALKIE TALKIE -->
+      <a-entity id="HEADPHONE_FRE_NAR" 
+                gltf-model="/worlds/WIT_1_Kitchen/assets/models/GLB_WalkieTalkie.glb" 
+                class='interactive'
+                shadow="receive:true; cast:true"
+                rotation="-90.00021045914971 131.54480722629057 0"
+                position="6.33304 1.05061 -0.30274"
+                scale="4.62 4.62 4.62"
+                sound="on: click; src: #Narr_Headphones-FR; volume:1;">
+      </a-entity>
+
+      <!-- Pyrodene NARRATIONS -->
+      <a-entity id="PYRODENE_ENG_NAR" 
+                gltf-model="/worlds/WIT_1_Kitchen/assets/models/GLB_WalkieTalkie.glb" 
+                class='interactive'
+                shadow="receive:true; cast:true"
+                rotation="-90.00021045914971 131.54480722629057 0"
+                position="6.333 1.05061 -2.439"
+                scale="4.62 4.62 4.62"
+                sound="on: click; src: #Narr_Pyrodene-ENG; volume:1;">
+      </a-entity>
+      <!-- CHANGE TO ORANGE WALKIE TALKIE -->
+      <a-entity id="PYRODENE_FRE_NAR" 
+                gltf-model="/worlds/WIT_1_Kitchen/assets/models/GLB_WalkieTalkie.glb" 
+                class='interactive'
+                shadow="receive:true; cast:true"
+                rotation=" -90 78.336 0"
+                position="6.33304 1.05061 -2.231"
+                scale="4.62 4.62 4.62"
+                sound="on: click; src: #Narr_Pyrodene-FR; volume:1;">
+      </a-entity>
+
+      <!-- JACKET NARRATIONS -->
+      <a-entity id="JACKET_ENG_NAR" 
+      gltf-model="/worlds/WIT_1_Kitchen/assets/models/GLB_WalkieTalkie.glb" 
+      class='interactive'
+      shadow="" 
+      rotation="-89.80769663998575 171.01185902828706 -78.5456382188943" 
+      position="6.21617 1.04687 0.70155" 
+      scale="4.62 4.62 4.62" 
+      sound="on: click; src:#Narr_Jacket-ENG; volume:1;">
+      </a-entity>
+      <!-- CHANGE TO ORANGE WALKIE TALKIE -->
+      <a-entity id="JACKET_FR_NAR" 
+      gltf-model="/worlds/WIT_1_Kitchen/assets/models/GLB_WalkieTalkie.glb" 
+      class='interactive'
+      shadow="" 
+      rotation="-89.80769663998575 171.01185902828706 -42.51633318768274" 
+      position="6.2253 1.04757 0.91348" 
+      scale="4.62 4.62 4.62" 
+      sound="on: click; src:#Narr_Jacket-FR; volume:1;">
+      </a-entity>
+
+      <!-- MAILBOX NARRATIONS -->
+      <a-entity id="MAILBOX_ENG_NAR" 
+      gltf-model="/worlds/WIT_1_Kitchen/assets/models/GLB_WalkieTalkie.glb" 
+      class="interactive"
+      shadow="" 
+      rotation="-90.00021045914971 170.7672060497662 0" 
+      position="3.67009 0.45621 -3.60149" 
+      scale="4.62 4.62 4.62" 
+      sound="on: click; src:#Narr_Mailbox-ENG; volume:1;">
+      </a-entity>
+     <!-- CHANGE TO ORANGE WALKIE TALKIE -->
+      <a-entity id="MAILBOX_FR_NAR" 
+      gltf-model="/worlds/WIT_1_Kitchen/assets/models/GLB_WalkieTalkie.glb" 
+      class="interactive" 
+      shadow="" 
+      rotation="-89.99963750135457 133.65214599678174 0" 
+      position="4.03986 0.45621 -3.54138" 
+      scale="4.62 4.62 4.62" 
+      sound="on: click; src:#Narr_Mailbox-FR; volume:1;">
+      </a-entity>
+
+      <!-- FLAMETHROWER NARRATIONS -->
+      <a-entity id="FLAMETHROWER_ENG_NAR" 
+      gltf-model="/worlds/WIT_1_Kitchen/assets/models/GLB_WalkieTalkie.glb" 
+      class="interactive"
+      shadow="" 
+      rotation="-90.00021045914971 170.7672060497662 0" 
+      position="4.740 0.45621 -3.60149" 
+      scale="4.62 4.62 4.62" 
+      sound="on: click; src:#Narr_Flamethrower-ENG; volume:1;">
+      </a-entity>
+     <!-- CHANGE TO ORANGE WALKIE TALKIE -->
+      <a-entity id="FLAMETHROWER_FR_NAR" 
+      gltf-model="/worlds/WIT_1_Kitchen/assets/models/GLB_WalkieTalkie.glb" 
+      class="interactive" 
+      shadow="" 
+      rotation="-89.99963750135457 133.65214599678174 0" 
+      position="5.095 0.45621 -3.54138" 
+      scale="4.62 4.62 4.62" 
+      sound="on: click; src:#Narr_Flamethrower-FR; volume:1;">
+      </a-entity>
+
+      <!-- CHEM BLEDNER NARRATIONS -->
+      <a-entity id="CHEMBLENDER_ENG_NAR" 
+      gltf-model="/worlds/WIT_1_Kitchen/assets/models/GLB_WalkieTalkie.glb" 
+      class="interactive"
+      shadow="" 
+      rotation="-90.00021045914971 170.7672060497662 0" 
+      position="5.532 0.45621 -3.60149" 
+      scale="4.62 4.62 4.62" 
+      sound="on: click; src:#Narr_Chemblender-ENG; volume:1;">
+      </a-entity>
+     <!-- CHANGE TO ORANGE WALKIE TALKIE -->
+      <a-entity id="CHEMBLENDER_FR_NAR" 
+      gltf-model="/worlds/WIT_1_Kitchen/assets/models/GLB_WalkieTalkie.glb" 
+      class="interactive" 
+      shadow="" 
+      rotation="-89.99963750135457 133.65214599678174 0" 
+      position="5.904 0.45621 -3.54138" 
+      scale="4.62 4.62 4.62" 
+      sound="on: click; src:#Narr_Chemblender-FR; volume:1;">
+      </a-entity>
+
+
+      <!-- RADIO REPEATER NARRATIONS -->
+      <a-entity id="REPEATER_ENG_NAR" 
+      gltf-model="/worlds/WIT_1_Kitchen/assets/models/GLB_WalkieTalkie.glb" 
+      class="interactive"
+      shadow="" 
+      rotation="-90.00021045914971 170.7672060497662 0" 
+      position="2.721 0.456 -3.46586" 
+      scale="4.62 4.62 4.62" 
+      sound="on: click; src:#Narr_Radio-ENG; volume:1;">
+      </a-entity>
+     <!-- CHANGE TO ORANGE WALKIE TALKIE -->
+      <a-entity id="REPEATER_FR_NAR" 
+      gltf-model="/worlds/WIT_1_Kitchen/assets/models/GLB_WalkieTalkie.glb" 
+      class="interactive" 
+     
+      shadow="" 
+      rotation="-89.99963750135457 133.65214599678174 0" 
+      position="3.08777 0.456 -3.5228" 
+      scale="4.62 4.62 4.62" 
+      sound="on: click; src:#Narr_Radio-FR; volume:1;">
+      </a-entity>
+
+
+
+      <!-- QUEBEC PICKUPABLE OBJECTS -->
       <!--TESTING THIS ONE SPECIFICALLY-->
       <a-entity class="Artefact-Headphones"
                 gltf-model="#headphones-gltf"
@@ -168,26 +346,23 @@
                                   descriptionLookAt:true;
                                   description: These are antique headphones the Canadian embassy uses for radio calls. Made in the 1920’s, and manufactured by Simplex telephone & radio MFG.CO, these headphones were designed for sensitive and balanced  audio, these were essential, and a technological marvel.;
                                   label_text:Headphones;"
-                grnd-placeable="dropRot:0 0 90"></a-entity>
+                grnd-placeable="dropRot:0 0 90">
+        </a-entity>
 
-                
-                <!-- Panel Headphones -->
-      <a-entity id="panel" geometry="primitive:box; width:0.8; height:0.2; depth:0.8" position="6.8 1.7 -1.7 " 
-                rotation="0 0 90" material="color:rgb(30, 50, 70)">
-        <!-- ENGLISH -->
-        <a-entity position="-0.2 0.1 0.2" class='interactive' geometry="primitive:cylinder; height:0.2; radius:0.1;" 
-                  material="color:rgb(50, 50, 255);" sound="on: click; src: #Narr_Headphones-ENG; volume:1;"
-                  animation__mouseenter="property:material.color; type:color; to:rgb(0, 0, 200); startEvents:mouseenter; dur:150"
-                  animation__mouseleave="property:material.color; type:color; to:rgb(50, 50, 255); startEvents:mouseleave; dur:150"
-                  animation__click="property:position; from:-0.2 0.04 0.2; to:-0.2 0.1 0.2; startEvents:click; dur:300"></a-entity>
+        <a-entity class="Artefact-Jacket"
+                gltf-model="#headphones-gltf"
+                position="6.631 1 1.563" scale="8 8 8"
+                rotation="0 0 90"
+                circles-sphere-env-map="src:#skyMap"
+                circles-artefact="inspectScale:10 10 10; textRotationY:0.0; inspectRotation:0 0 0;
+                                  label_offset:0.0 0.5 0.0; arrow_position:down;
+                                  title:CBC Jacket;
+                                  descriptionLookAt:true;
+                                  description: This is an overcoat worn by male hosts at the CBC Pavillion’s International and Universal Exposition , which was held in Montreal, Quebec 1967 . The jacket was manufactured by Createbrooke Clothiers incorporated.;
+                                  label_text:Jacket;"
+                grnd-placeable="dropRot:0 0 90">
+        </a-entity>
 
-        <!-- FRENCH -->
-        <a-entity position="-0.2 0.1 -0.2" class='interactive' geometry="primitive:cylinder; height:0.2; radius:0.1;" 
-                  material="color:rgb(50, 255, 50);" sound="on: click; src: #Narr_Headphones-FR; volume:1;"
-                  animation__mouseenter="property:material.color; type:color; to:rgb(0, 200, 0); startEvents:mouseenter; dur:150"
-                  animation__mouseleave="property:material.color; type:color; to:rgb(50, 255, 50); startEvents:mouseleave; dur:150"
-                  animation__click="property:position; from:-0.2 0.04 -0.2; to:-0.2 0.1 -0.2; startEvents:click; dur:300"></a-entity>
-      </a-entity>
 
       <a-entity class="Artefact-Mailbox"
                 gltf-model="#mailbox-gltf"
@@ -200,7 +375,66 @@
                                   descriptionLookAt:true;
                                   description:This is a Canada Post mailbox from the 1970s. This mailbox, finished in red enamel paint, was a marker in Canada Post’s history as they began to mechanise their sorting process.;
                                   label_text:Mailbox;"
-                grnd-placeable></a-entity>
+                grnd-placeable>
+        </a-entity>     
+
+        <a-entity class="Artefact-Repeater"
+                gltf-model="#mailbox-gltf"
+                position="2.768 0.328 -4.149" scale="0.28 0.28 0.28"
+                circles-sphere-env-map="src:#skyMap"
+                circles-artefact="inspectScale:0.3 0.3 0.3; textRotationY:0.0;
+                                  inspectRotation:0 -90 0; inspectPosition:0 -0.5 0;
+                                  label_offset:0.0 1.8 0.0; arrow_position:down;
+                                  title:Amateur Radio Repeater;
+                                  descriptionLookAt:true;
+                                  description:This is Canada’s first amateur radio repeater, made by Murray Epstein in the 1960s in Montreal, Quebec. The radio repeater is used to receive low level radio waves and re-transmits them into higher power waves so it can be broadcasted further. This metal device finished in grey paint was an important step forward for Canada's telecommunications.;
+                                  label_text:Radio Repeater;"
+                grnd-placeable>
+        </a-entity>
+
+       <!-- ONTARIO PICKUPABLE OBJECTS -->
+       <a-entity class="Artefact-Pyrodene"
+              gltf-model="#headphones-gltf"
+              position="6.631 1 -1.8" scale="8 8 8"
+              circles-sphere-env-map="src:#skyMap"
+              circles-artefact="inspectScale:10 10 10; textRotationY:0.0; inspectRotation:0 0 0;
+                                label_offset:0.0 0.5 0.0; arrow_position:down;
+                                title: Pyrodene Can;
+                                descriptionLookAt:true;
+                                description:This pyrodene gel capsule is used to create a chemical solution that decreases the surface tension of water, and improves the wetting ability of various dust and powdery materials. Labelled as “Wet Water”, this was essential to firefighting in the 1950’s.;
+                         label_text:Pyrodene;"
+              grnd-placeable>
+      </a-entity>
+
+      
+       <a-entity class="Artefact-Chemblender" 
+       gltf-model="#mailbox-gltf" 
+       position="5.93835 0.327 -3.924" 
+       scale="0.28 0.28 0.28" 
+       circles-sphere-env-map="src:#skyMap"
+       circles-artefact="inspectScale:0.3 0.3 0.3; textRotationY:0.0;
+                         inspectRotation:0 -90 0; inspectPosition:0 -0.5 0;
+                         label_offset:0.0 1.8 0.0; arrow_position:down;
+                         title: 1950's Chemical Blender;
+                         descriptionLookAt:true;
+                         description:This chemical blender, originally from Cornwall Ontario in 1950, when connected to a pump and a fire hose, serves to mix water with special capsules designed to lower the surface tension of water, thereby creating a potent firefighting agent. The blender effectively dilutes the chemicals, ensuring thorough mixing, and is then sprayed to extinguish flames.;
+                         label_text:Chemical Blender;"
+       grnd-placeable></a-entity>
+
+       <a-entity class="Artefact-Flamethrower"
+       gltf-model="#mailbox-gltf"
+       position="4.884 0.327 -3.924" scale="0.28 0.28 0.28"
+       circles-sphere-env-map="src:#skyMap"
+       circles-artefact="inspectScale:0.3 0.3 0.3; textRotationY:0.0;
+                         inspectRotation:0 -90 0; inspectPosition:0 -0.5 0;
+                         label_offset:0.0 1.8 0.0; arrow_position:down;
+                         title: 1950's Flamethrower;
+                         descriptionLookAt:true;
+                         description:This is a Flamethrower from the 1950’s designed to fight forest fires. Unconventionally, this flamethrower is designed to fire cold diesel, and is used to suppress extremely hot fire. This tool is an example of Canada’s leadership in developing and testing fire-fighting equipment.;
+                         label_text:Flamethrower;"
+       grnd-placeable></a-entity>
+
+
 
       <!-- <a-entity class="Artefact-Keys"
                                   position="-2.56 0.978 -1.09" rotation="-90 45.000 0" scale="1.3 1.3 1.3"
