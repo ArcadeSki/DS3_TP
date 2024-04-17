@@ -4,82 +4,70 @@
 
     <!-- Circles' head scripts [REQUIRED] -->
     <circles-start-scripts/>
-    
     <script src="/worlds/BasicStart/components/grnd_placeable.js"></script>
     <script src="/worlds/BasicStart/components/checkLayout.js"></script>
     <!-- add your custom scripts here -->
+
     <!-- <script src="/worlds/hub/scripts/hub.js"></script> -->
   </head>
-  <body>
-    <!-- this is used to create our enter UI that creates a 2D overlay to capture a user gesture for sound/mic access etc. -->
-    <circles-start-ui/>
 
+  <body>
+    <circles-start-ui/>
     <!-- a-scene with 'circles-properties' component [REQUIRED] -->
     <a-scene circles_scene_properties>
       <a-assets>
-        <!-- add your assets here -->
-        <img id='skyMap' src='/global/assets/textures/equirectangular/WhiteBlue.jpg' crossorigin="anonymous">
+        <!-- IMAGE ASSETS -->
         <img id='SetHint' src='/global/assets/textures/equirectangular/QuebecHint.png' crossorigin="anonymous">
         <img id='Ceiling' src='/global/assets/textures/equirectangular/ceiling.png' crossorigin="anonymous">
         <img id='instructions' src='/global/assets/textures/equirectangular/instructions.png' crossorigin="anonymous">
+        <img id='instructions2' src='/global/assets/textures/equirectangular/walkieTalkie_Poster.png' crossorigin="anonymous">
 
         <!-- 360 -->
         <img id='link_1_360' src='/global/images/Campfire_Screen.jpg' crossorigin="anonymous">
 
-        <!-- <a-asset-item id="navmesh_gltf" src="/worlds/WIT_1_Kitchen/assets/models/wit-1-nav.glb" response-type="arraybuffer" crossorigin="anonymous"></a-asset-item> -->
+        <!-- ROOM ASSETS -->
         <a-asset-item id="test-gltf" response-type="arraybuffer" src="/worlds/WIT_1_Kitchen/assets/models/Test2.glb"></a-asset-item>
-        <a-asset-item id="small-gltf" response-type="arraybuffer" src="/worlds/WIT_1_Kitchen/assets/models/GLTF_Quebec_V000.glb"></a-asset-item>
+        <a-asset-item id="small-gltf" response-type="arraybuffer" src="/worlds/WIT_1_Kitchen/assets/models/GLTF_Quebec_MiniSet.glb"></a-asset-item>
 
         <!-- Artifact Models. All models are available in all levels, but only a selection of them are valid to complete a given level -->
-
         <!-- QUEBEC ARTIFACTS ASSETS-->
         <a-asset-item id="mailbox-gltf" response-type="arraybuffer" src="/worlds/WIT_1_Kitchen/assets/models/mailBox_v003.glb"></a-asset-item>
         <a-asset-item id="headphones-gltf" response-type="arraybuffer" src="/worlds/WIT_1_Kitchen/assets/models/headphones.glb"></a-asset-item>
-        
-        
+        <a-asset-item id="repeater-gltf" response-type="arraybuffer" src="/worlds/WIT_1_Kitchen/assets/models/GLB_Quebec_RadioRepeater.glb"></a-asset-item>
+        <a-asset-item id="jacket-gltf" response-type="arraybuffer" src="/worlds/WIT_1_Kitchen/assets/models/GLB_Jacket.glb"></a-asset-item>
         <!-- ONTARIO ARTIFACTS ASSETS -->
         <a-asset-item id="pyrodene-gltf" response-type="arraybuffer" src="/worlds/WIT_1_Kitchen/assets/models/Pyrodene.glb"></a-asset-item>
         <a-asset-item id="chemblender-gltf" response-type="arraybuffer" src="/worlds/WIT_1_Kitchen/assets/models/Chemblender.glb"></a-asset-item>
         <a-asset-item id="flamethrower-gltf" response-type="arraybuffer" src="/worlds/WIT_1_Kitchen/assets/models/GLB_Ontario_FlameThrower.glb"></a-asset-item>
-
-
+        <!-- NARRATION ASSETS -->
         <a-asset-item id="walkietalkie-gltf" response-type="arraybuffer" src="/worlds/WIT_1_Kitchen/assets/models/GLB_WalkieTalkie.glb"></a-asset-item>
         <a-asset-item id="walkietalkie2-gltf" response-type="arraybuffer" src="/worlds/WIT_1_Kitchen/assets/models/GLB_WalkieTalkie2.glb"></a-asset-item>
-        <!-- <a-asset-item id="Drill-gltf" src="/worlds/WIT_1_ElectricLab/assets/models/Drill.glb" response-type="arraybuffer"></a-asset-item> -->
 
-        <!-- audio -->
+        <!-- Audio Parts -->
         <audio id="Quebec_music" src="/worlds/WIT_1_Kitchen/assets/audio/slow-travel.wav" preload="auto" crossorigin="anonymous"></audio>
         
-
         <!-- HEADPHONES NARRATION -->
         <audio id="Narr_Headphones-ENG" src="/worlds/WIT_1_Kitchen/assets/audio/Recordings/Headphone_ENG.mp3" preload="true" crossorigin="anonymous"></audio>
         <audio id="Narr_Headphones-FR" src="/worlds/WIT_1_Kitchen/assets/audio/Recordings/headphone_FRE.wav" preload="true" crossorigin="anonymous"></audio>
-        
         <!-- JACKET NARRATION -->
         <audio id="Narr_Jacket-ENG" src="/worlds/WIT_1_Kitchen/assets/audio/Recordings/Jacket_ENG.wav" preload="true" crossorigin="anonymous"></audio>
         <audio id="Narr_Jacket-FR" src="/worlds/WIT_1_Kitchen/assets/audio/Recordings/Jacket_FRE.wav" preload="true" crossorigin="anonymous"></audio>
-        
         <!-- MAILBOX NARRATION -->
         <audio id="Narr_Mailbox-ENG" src="/worlds/WIT_1_Kitchen/assets/audio/Recordings/Maibox_ENG.wav" preload="true" crossorigin="anonymous"></audio>
         <audio id="Narr_Mailbox-FR" src="/worlds/WIT_1_Kitchen/assets/audio/Recordings/Mailbox_FRE.wav" preload="true" crossorigin="anonymous"></audio>
-        
         <!-- RADIO NARRATION -->
         <audio id="Narr_Radio-ENG" src="/worlds/WIT_1_Kitchen/assets/audio/Recordings/Radio_ENG.wav" preload="true" crossorigin="anonymous"></audio>
         <audio id="Narr_Radio-FR" src="/worlds/WIT_1_Kitchen/assets/audio/Recordings/Radio_FRE.wav" preload="true" crossorigin="anonymous"></audio>
-
         <!-- PYRODENE NARRATION -->
         <audio id="Narr_Pyrodene-ENG" src="/worlds/WIT_1_Kitchen/assets/audio/Recordings/PYRODENE_ENG.wav" preload="true" crossorigin="anonymous"></audio>
         <audio id="Narr_Pyrodene-FR" src="/worlds/WIT_1_Kitchen/assets/audio/Recordings/PYRODENE_FRE.wav" preload="true" crossorigin="anonymous"></audio>
-
         <!-- BLENDER NARRATION -->
         <audio id="Narr_Chemblender-ENG" src="/worlds/WIT_1_Kitchen/assets/audio/Recordings/CHEMBLENDER_ENG.wav" preload="true" crossorigin="anonymous"></audio>
         <audio id="Narr_Chemblender-FR" src="/worlds/WIT_1_Kitchen/assets/audio/Recordings/CHEMBLENDER_FRE.wav" preload="true" crossorigin="anonymous"></audio>
-
         <!-- FLAMETHROWER NARRATION -->
         <audio id="Narr_Flamethrower-ENG" src="/worlds/WIT_1_Kitchen/assets/audio/Recordings/FLAMETHROWER_ENG.wav" preload="true" crossorigin="anonymous"></audio>
         <audio id="Narr_Flamethrower-FR" src="/worlds/WIT_1_Kitchen/assets/audio/Recordings/FLAMETHROWER_FRE.wav" preload="true" crossorigin="anonymous"></audio>
         
-
         <!-- Circles' built-in assets [REQUIRED] -->
         <circles-assets/>
       </a-assets>
@@ -87,7 +75,7 @@
       <!-- Circles' built-in manager and avatar [REQUIRED] -->
       <circles-manager-avatar/>
 
-      <!-- checkpoints -->
+      <!-- Artifcat Checkpoints -->
       <a-entity id="headphone-mat" class='tp' circles-checkpoint position="-0.26 0.09 -1.88"></a-entity>
       <a-entity id="mailbox-mat" class='tp' circles-checkpoint position="-2.3 0.05 0.8"></a-entity>
       <a-entity id="jacket-mat" class='tp' circles-checkpoint position="2.85 0.05 -2.75"></a-entity>
@@ -102,8 +90,7 @@
       <a-entity circles-checkpoint circles-spawnpoint position="1.3 0.05 3.5"></a-entity>
       <a-entity circles-checkpoint circles-spawnpoint position="-1.3 0.05 3.5"></a-entity>
 
-      <!-- sky and lights -->
-      <!-- bad place for narrative manager but :) -->
+      <!-- Lighting -->
       <a-entity id="RoomLight" light="type:ambient; color:#FFF; intensity:0.65;  "></a-entity>
       <a-entity id="RoomLight-2" light="type: spot; intensity: 18.52; angle: 45;  shadowBias: 0.029; color: #fffeeb; penumbra: 1" position="-1 5.7 -1.7" rotation="-84.75764663370268 179.9998479605043 179.9998479605043"></a-entity>
       <a-entity id="RoomLight-3" light="type: spot; intensity: 15.59; angle: 45;  shadowBias: 0.029; color: #fffeeb; penumbra: 1; distance: 4.55" position="6.6 4.6 -0.35" rotation="-84.75764663370268 179.9998479605043 179.9998479605043"></a-entity>
@@ -116,10 +103,10 @@
       <a-entity circles-sound="type:music; src:#Quebec_music; autoplay:true; loop:true; volume:0.05;"></a-entity>
 
       
-      <!-- <a-entity position="-2.895 1 1.164" circles-sound="type:ambient; src:#Amb_kitchen-snd; autoplay:true; loop:true; volume:0.7;" ></a-entity> -->
-
+     <!-- Image Objects -->
       <a-entity id="ceiling"geometry="primitive: plane; width: 1.5" position=".57 4.963 0" rotation="90 90 0" scale="13 13 13" material="src:#Ceiling"></a-entity>
       <a-entity id="HowToPlay"geometry="primitive: plane;" position="7.099 2.267 0.429" rotation="0 -90 0" scale="2 2 2" material="src:#instructions"></a-entity>
+      <a-entity id="HowToPlay2"geometry="primitive: plane;" position="7.099 2.267 -2.392" rotation="0 -90 0" scale="2 2 2" material="src:#instructions2"></a-entity>
       <!-- Hint Board Prop -->
       <a-entity position="2.88714 1.35139 0.84564" scale="0.0367 1 1" rotation="0 0 35" material="color: #8c8c8c" id="Hint_Board" geometry="primitive:box">
         <a-entity id="SetHint"geometry="primitive: plane; width: 1.5" position=".57 .004 0" rotation="0 90 0" scale=".66 .993 1" material="src:#SetHint">
@@ -137,25 +124,16 @@
                   animation__click="property:position.y; from:1.5; to:1.55; startEvents:click; dur:300"></a-entity>
       </a-entity>
 
-      <!--  -->
       <!--QUEBEC ROOM MODEL-->
-      <!--  -->
-      <!-- circles-sphere-env-map="src:#skyMap" -->
       <a-entity id="room_model" gltf-model="#test-gltf"  
                 postion="0 0 0" rotation="0 0 0" scale="4.5 4.5 4.5" shadow="receive:true; cast:true;">
-        <a-entity id="set_model" gltf-model="#small-gltf"  
-                  shadow="receive:true; cast:true;"></a-entity>
       </a-entity>
-
-      <a-entity id="room_model_extra_pieces" shadow="receive:true; cast:true;">
-        <!-- <a-entity geometry="" id="Ceiling_Slate" position="-3.76 5.59 -0.262" scale="3.4 0.09 11.4" material="color: #918383"></a-entity>
-        <a-entity geometry="" id="Ceiling_Slate-2" position="5.60862 5.59 -0.262" scale="3.4 0.09 11.4" material="color: #918383"></a-entity> -->
-        <!-- <a-entity geometry="" id="Ceiling_Slate-3" position="0.83912 5.59 -0.262" scale="13.4 0.09 11.4" material="color: #918383"></a-entity> -->
-      </a-entity>
+      <a-entity id="set_model" gltf-model="#small-gltf"  
+                position="0.3 0 -0.35" rotation="0 0 0" scale="0.68 0.68 0.68" shadow="receive:true; cast:true;"></a-entity>
       
       <!-- PLACES TO PUT OBJECTS -->
       <a-entity class='mat Artefact-Headphones' geometry="primitive:box; height:0.1; width:0.3; depth:0.3;"
-                position="-0.2 1.1 -3.25" material="opacity:0.25;"></a-entity>
+                position="-0.3 1.1 -3.25" material="opacity:0.25;"></a-entity>
       <a-entity class='mat Artefact-Mailbox' geometry="primitive:box; height:0.1; width:0.3; depth:0.3;"
                 position="-1.9 0.05 -1.7" material="opacity:0.25;"></a-entity>
       <a-entity class='mat Artefact-Jacket' geometry="primitive:box; height:1.0; width:0.1; depth:0.5;"
@@ -337,7 +315,6 @@
       <!-- QUEBEC PICKUPABLE OBJECTS -->
       <a-entity class="Artefact-Headphones" gltf-model="#headphones-gltf"
                 position="6.55 1 -1" scale="8 8 8" rotation="0 0 90"
-                
                 circles-artefact="inspectScale:10 10 10; textRotationY:0.0; inspectRotation:0 0 0;
                                   label_offset:0.0 0.5 0.0; arrow_position:down;
                                   title:Headphones;
@@ -347,22 +324,20 @@
                 grnd-placeable="dropRot:0 0 90">
       </a-entity>
 
-      <a-entity class="Artefact-Jacket" gltf-model="#headphones-gltf"
-                position="6.631 1 1.563" scale="8 8 8" rotation="0 0 90"
-                
-                circles-artefact="inspectScale:10 10 10; textRotationY:0.0; inspectRotation:0 0 0;
+      <a-entity class="Artefact-Jacket" gltf-model="#jacket-gltf"
+                position="6.631 1.022 1.563" scale=".005 .005 .005"rotation="-90 0 -90"
+                circles-artefact="inspectScale:.005 .005 .005; textRotationY:0.0; inspectRotation:0 0 0;
                                   label_offset:0.0 0.5 0.0; arrow_position:down;
                                   title:CBC Jacket;
                                   descriptionLookAt:true;
                                   description: This is an overcoat worn by male hosts at the CBC Pavillion’s International and Universal Exposition , which was held in Montreal, Quebec 1967 . The jacket was manufactured by Createbrooke Clothiers incorporated.;
                                   label_text:Jacket;"
-                grnd-placeable="dropRot:0 0 90">
+                grnd-placeable="dropRot:-90 0 -90">
       </a-entity>
 
 
       <a-entity class="Artefact-Mailbox" gltf-model="#mailbox-gltf"
-                position="4 0.4 -4.2" scale="0.28 0.28 0.28" rotation="0 0 0"
-                
+                position="4 0.4 -4.2" scale="0.28 0.28 0.28" rotation="0 0 0" 
                 circles-artefact="inspectScale:0.3 0.3 0.3; textRotationY:0.0;
                                   inspectRotation:0 -90 0; inspectPosition:0 -0.5 0;
                                   label_offset:0.0 1.8 0.0; arrow_position:down;
@@ -373,9 +348,8 @@
                 grnd-placeable>
       </a-entity>     
 
-      <a-entity class="Artefact-Repeater" gltf-model="#mailbox-gltf"
-                position="2.768 0.328 -4.149" scale="0.28 0.28 0.28" rotation="0 0 0"
-               
+      <a-entity class="Artefact-Repeater" gltf-model="#repeater-gltf"
+                position="2.768 0.328 -4.149" scale="0.2 0.2 0.2" rotation="0 0 0"
                 circles-artefact="inspectScale:0.3 0.3 0.3; textRotationY:0.0;
                                   inspectRotation:0 -90 0; inspectPosition:0 -0.5 0;
                                   label_offset:0.0 1.8 0.0; arrow_position:down;
@@ -389,7 +363,6 @@
        <!-- ONTARIO PICKUPABLE OBJECTS -->
       <a-entity class="Artefact-Pyrodene" gltf-model="#pyrodene-gltf"
               position="6.631 1.071 -1.8" scale="5.5 5.5 5.5" rotation="0 -180 0"
-              
               circles-artefact="inspectScale:10 10 10; textRotationY:0.0; inspectRotation:0 0 0;
                                 label_offset:0.0 0.5 0.0; arrow_position:down;
                                 title: Pyrodene Can;
@@ -402,7 +375,6 @@
       
       <a-entity class="Artefact-Chemblender" gltf-model="#chemblender-gltf" 
                   position="5.736 0.328 -3.908" scale="0.144 0.144 0.144" rotation="0 0 0"
-                  
                   circles-artefact="inspectScale:0.3 0.3 0.3; textRotationY:0.0;
                          inspectRotation:0 -90 0; inspectPosition:0 -0.5 0;
                          label_offset:0.0 1.8 0.0; arrow_position:down;
@@ -414,7 +386,6 @@
 
       <a-entity class="Artefact-Flamethrower"gltf-model="#flamethrower-gltf"
                   position="5.033 0.559 -4.059" scale="0.28 0.28 0.28" rotation="0 0 0"
-                  
                   circles-artefact="inspectScale:0.3 0.3 0.3; textRotationY:0.0;
                                     inspectRotation:0 -90 0; inspectPosition:0 -0.5 0;
                                     label_offset:0.0 1.8 0.0; arrow_position:down;
