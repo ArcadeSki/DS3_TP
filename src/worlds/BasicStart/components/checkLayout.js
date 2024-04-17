@@ -199,21 +199,12 @@ function check_ontario(){
                 ((obj3[0].getAttribute('position').y).toFixed(2) === (obj3[1].getAttribute('position').y).toFixed(2)) &&
                 ((obj3[0].getAttribute('position').z).toFixed(2) === (obj3[1].getAttribute('position').z).toFixed(2)))
             {
-                if( ((obj4[0].getAttribute('position').x).toFixed(2) === (obj4[1].getAttribute('position').x).toFixed(2)) &&
-                    ((obj4[0].getAttribute('position').y).toFixed(2) === (obj4[1].getAttribute('position').y).toFixed(2)) &&
-                    ((obj4[0].getAttribute('position').z).toFixed(2) === (obj4[1].getAttribute('position').z).toFixed(2)))
-                {
-                    console.log('Ontario set is looking good');
-                    spawnLab('-4.3 1 3.5');
+                console.log('Ontario set is looking good');
+                spawnLab('-4.3 1 3.5');
 
-                    //change "complete-light" colour
-                    document.querySelector('#complete-light').setAttribute("light","color: #2bff2b;");
-                    document.querySelector('#complete-light').setAttribute("light","decay: -1;");
-                }
-                else{
-                    console.log('WRONG');
-                    document.querySelector('a-scene').setAttribute('background','color:red;');
-                }
+                //change "complete-light" colour
+                document.querySelector('#complete-light').setAttribute("light","color: #2bff2b;");
+                document.querySelector('#complete-light').setAttribute("light","decay: -1;");
             }
             else{
                 console.log('WRONG');
