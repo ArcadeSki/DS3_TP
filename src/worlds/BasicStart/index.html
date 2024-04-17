@@ -17,7 +17,10 @@
       <!-- a-scene with 'circles-properties' component [REQUIRED] -->
       <a-scene circles_scene_properties>
         <a-assets>
-          
+          <!--INGENIUM SIGN-->
+          <img id="ING_img" src="/worlds/BasicStart/assets/Ingenium_center_image.png">
+
+
           <!--TESTING LIGHTS-->
           <!-- <a-entity light="type: point; intensity: 0.75; distance: 50; decay: 2"
           position="0 10 10"></a-entity> -->
@@ -55,8 +58,17 @@
         <a-entity id="spotlight5" light="type:spot; intensity:9.0; color:#feffeb; angle:80; penumbra:0.1;" circles-platform-shadows rotation="-90 0 0" position='-8.5 6 -18'></a-entity>
 
 
-
-
+        <!-- SKIP TUTORIAL -->
+        <a-entity geometry="primitive:box; height:0.4; width:2; depth:0.8;" position="-1 0.8 0" 
+                  rotation="0 0 90" material="color:rgb(150, 150, 150);">
+          <a-entity position="0.6 0.2 0">
+            <a-entity class="interactive" onclick="spawnQB('-4.8 1.5 3'); spawnON('-3.5 1.5 3');" geometry="primitive:cylinder; height:0.4; radius:0.2;" material="color:rgb(255, 100, 100);"
+                    animation__mouseenter="property:material.color; type:color; to:rgb(255, 0, 0); startEvents:mouseenter; dur:200"
+                    animation__mouseleave="property:material.color; type:color; to:rgb(255, 50, 50); startEvents:mouseleave; dur:200"
+                    animation__click="property:position.y; from:-0.1; to:0; startEvents:click; dur:300"></a-entity>
+          </a-entity>
+        </a-entity>
+        
         <a-entity class="box" geometry="primitive:box; width:0.2; height:0.2; depth:0.2;" 
                   material="color:rgb(100, 250, 55)" position="-4 0 2" 
                   circles-artefact="textRotationY:0.0; inspectRotation:0 0 0;
@@ -120,6 +132,7 @@
         <a-entity class='tp' circles-checkpoint position="-4 0 -5"></a-entity>
         <a-entity class='tp'circles-checkpoint position="-4 0 -8"></a-entity>
         <a-entity class='tp'circles-checkpoint position="-4 0 -12"></a-entity>
+        <a-image src="#ING_img" position="-12.8 1.838 -6.425" rotation="0 90 0" scale="2.5 0.9 0.9"></a-image>
 
         <a-entity id="museum_room" position="2 0 0" scale="1.5 1.5 1.5" gltf-model="#museum"></a-entity>
         <a-entity id="test_room" position="20 0 0" scale="4 4 4" gltf-model="#test-gltf"></a-entity>
