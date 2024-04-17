@@ -36,6 +36,8 @@
         <!-- ONTARIO ARTIFACTS -->
         <a-asset-item id="pyrodene-gltf" response-type="arraybuffer" src="/worlds/WIT_1_Kitchen/assets/models/Pyrodene.glb"></a-asset-item>
         <a-asset-item id="chemblender-gltf" response-type="arraybuffer" src="/worlds/WIT_1_Kitchen/assets/models/Chemblender.glb"></a-asset-item>
+        <a-asset-item id="flamethrower-gltf" response-type="arraybuffer" src="/worlds/WIT_1_Kitchen/assets/models/GLB_Ontario_FlameThrower.glb"></a-asset-item>
+
 
         <a-asset-item id="walkietalkie-gltf" response-type="arraybuffer" src="/worlds/WIT_1_Kitchen/assets/models/GLB_WalkieTalkie.glb"></a-asset-item>
 
@@ -78,9 +80,9 @@
       <circles-manager-avatar/>
 
       <!-- checkpoints -->
-      <a-entity id="pyrodene-mat" class='tp' circles-checkpoint position="0.05 0.08 -1.6"></a-entity>
-      <a-entity id="chemblender-mat" class='tp' circles-checkpoint position="1 0.08 -1.6"></a-entity>
-      <a-entity id="flamethrower-mat" class='tp' circles-checkpoint position="2 0.08 -1.6"></a-entity>
+      <a-entity id="pyrodene-mat" class='tp' circles-checkpoint position="-1 0.08 -0.3"></a-entity>
+      <a-entity id="chemblender-mat" class='tp' circles-checkpoint position="0.75 0.08 -0.6"></a-entity>
+      <a-entity id="flamethrower-mat" class='tp' circles-checkpoint position="1 0.08 -2.3"></a-entity>
 
 
       <a-entity circles-checkpoint circles-spawnpoint position="4.6 0.05 1.25"></a-entity>
@@ -138,32 +140,34 @@
       
       <!-- PLACES TO PUT OBJECTS -->
       <a-entity class='mat Artefact-Pyrodene' geometry="primitive:box; height:0.1; width:0.3; depth:0.3;"
-                position="-0.2 1.1 -3.25" material="opacity:0.25;"></a-entity>
+                position="-0.6 1.06 -1.25" material="opacity:0.25;"></a-entity>
 
       <a-entity class='mat Artefact-Chemblender' geometry="primitive:box; height:0.1; width:0.3; depth:0.3;"
-                position="-1.9 0.05 -1.7" material="opacity:0.25;"></a-entity>
+                position="0 0.05 -1.25" material="opacity:0.25;"></a-entity>
 
       <a-entity class='mat Artefact-Flamethrower' geometry="primitive:box; height:0.1; width:0.3; depth:0.3;"
-                position="-1.9 0.05 -1.7" material="opacity:0.25;"></a-entity>
+                position="0.75 1 -3.25" material="opacity:0.25;"></a-entity>
 
       <!---ADDING ARTEFACT NARRATION HERE-->
       
 
       <!-- ONTARIO PICKUPABLE OBJECTS -->
-      <a-entity class="Artefact-Pyrodene" gltf-model="#headphones-gltf"
-              position="6.631 1 -1.8" scale="8 8 8" rotation="0 0 0"
-              circles-sphere-env-map="src:#skyMap"
+      <a-entity class="Artefact-Pyrodene" gltf-model="#pyrodene-gltf"
+              position="6.631 1.071 -1.8" scale="5.5 5.5 5.5" rotation="0 -180 0"
+              
               circles-artefact="inspectScale:10 10 10; textRotationY:0.0; inspectRotation:0 0 0;
                                 label_offset:0.0 0.5 0.0; arrow_position:down;
                                 title: Pyrodene Can;
                                 descriptionLookAt:true;
                                 description:This pyrodene gel capsule is used to create a chemical solution that decreases the surface tension of water, and improves the wetting ability of various dust and powdery materials. Labelled as “Wet Water”, this was essential to firefighting in the 1950’s.;
                          label_text:Pyrodene;"
-              grnd-placeable></a-entity>
+              grnd-placeable>
+      </a-entity>
+
       
-      <a-entity class="Artefact-Chemblender" gltf-model="#mailbox-gltf" 
-                  position="5.93835 0.327 -3.924" scale="0.28 0.28 0.28" rotation="0 0 0"
-                  circles-sphere-env-map="src:#skyMap"
+      <a-entity class="Artefact-Chemblender" gltf-model="#chemblender-gltf" 
+                  position="5.736 0.328 -3.908" scale="0.144 0.144 0.144" rotation="0 0 0"
+                  
                   circles-artefact="inspectScale:0.3 0.3 0.3; textRotationY:0.0;
                          inspectRotation:0 -90 0; inspectPosition:0 -0.5 0;
                          label_offset:0.0 1.8 0.0; arrow_position:down;
@@ -173,9 +177,9 @@
                          label_text:Chemical Blender;"
                     grnd-placeable></a-entity>
 
-      <a-entity class="Artefact-Flamethrower"gltf-model="#mailbox-gltf"
-                  position="4.884 0.327 -3.924" scale="0.28 0.28 0.28" rotation="0 0 0"
-                  circles-sphere-env-map="src:#skyMap"
+      <a-entity class="Artefact-Flamethrower"gltf-model="#flamethrower-gltf"
+                  position="5.033 0.559 -4.059" scale="0.28 0.28 0.28" rotation="0 0 0"
+                  
                   circles-artefact="inspectScale:0.3 0.3 0.3; textRotationY:0.0;
                                     inspectRotation:0 -90 0; inspectPosition:0 -0.5 0;
                                     label_offset:0.0 1.8 0.0; arrow_position:down;

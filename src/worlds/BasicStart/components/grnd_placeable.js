@@ -4,7 +4,8 @@
 AFRAME.registerComponent('grnd-placeable', {
     schema: {
         initialPos:{type:'string'},
-        dropRot:{type:'string', default:'0 0.1 0'}
+        dropRot:{type:'string', default:'0 0.1 0'},
+        initLoad:{type:'boolean', default:'false'}
     },
     init:function(){
         const CONTEXT_AF = this;
@@ -16,8 +17,12 @@ AFRAME.registerComponent('grnd-placeable', {
         //mats (red, green, blue)
         let mats = document.querySelectorAll('.mat');
         
-        CONTEXT_AF.data.initialPos = String(CONTEXT_AF.el.object3D.position.x) + ' ' + String(CONTEXT_AF.el.object3D.position.y) + ' ' + String(CONTEXT_AF.el.object3D.position.z);
-        console.log("initial pos is: ", CONTEXT_AF.data.initialPos);
+        if(CONTEXT_AF.data.initLoad === false){
+            CONTEXT_AF.data.initialPos = String(CONTEXT_AF.el.object3D.position.x) + ' ' + String(CONTEXT_AF.el.object3D.position.y) + ' ' + String(CONTEXT_AF.el.object3D.position.z);
+            console.log("initial pos is: ", CONTEXT_AF.data.initialPos);
+            CONTEXT_AF.data.initLoad = true;
+        }
+        
 
         if (CONTEXT_AF.el.hasAttribute('circles-artefact') === false) {
             CONTEXT_AF.el.setAttribute('circles-artefact', {});
