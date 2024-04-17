@@ -1,34 +1,34 @@
 'use strict';
 
-function spawnLab(){
+function spawnLab(position){
     let complete = document.createElement('a-entity');
 
-    complete.setAttribute('position','-4.8 1.5 3.8');
+    complete.setAttribute('position',position);
     complete.setAttribute('rotation','0 0 0');
-    complete.setAttribute('id','port');
+    complete.setAttribute('id','portal');
     complete.setAttribute('circles-portal','title_text:Lab; link_url:/w/BasicStart');
 
     document.querySelector('a-scene').appendChild(complete);
 }
 
-function spawnON(){
+function spawnON(position){
     let complete = document.createElement('a-entity');
 
-    complete.setAttribute('position','-4.8 1.5 3.8');
-    complete.setAttribute('rotation','0 0 0');
-    complete.setAttribute('id','port');
-    complete.setAttribute('circles-portal','title_text:Lab; link_url:/w/Ontario');
+    complete.setAttribute('position', position);
+    complete.setAttribute('rotation','0 90 0');
+    complete.setAttribute('id','portal');
+    complete.setAttribute('circles-portal','title_text:Ontario; link_url:/w/Ontario');
 
     document.querySelector('a-scene').appendChild(complete);
 }
 
-function spawnQB(){
+function spawnQB(position){
     let complete = document.createElement('a-entity');
 
-    complete.setAttribute('position','-4.8 1.5 3.8');
+    complete.setAttribute('position', position);
     complete.setAttribute('rotation','0 90 0');
-    complete.setAttribute('id','port');
-    complete.setAttribute('circles-portal','title_text:Lab; link_url:/w/WIT_1_Kitchen');
+    complete.setAttribute('id','portal');
+    complete.setAttribute('circles-portal','title_text:Quebec; link_url:/w/WIT_1_Kitchen');
 
     document.querySelector('a-scene').appendChild(complete);
 }
