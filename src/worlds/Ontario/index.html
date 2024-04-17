@@ -22,16 +22,21 @@
         <!-- add your assets here -->
         <img id='skyMap' src='/global/assets/textures/equirectangular/WhiteBlue.jpg' crossorigin="anonymous">
         <img id='SetHint' src='/global/assets/textures/equirectangular/OntarioHint.png' crossorigin="anonymous">
+        <img id='Ceiling' src='/global/assets/textures/equirectangular/ceiling.png' crossorigin="anonymous">
+        <img id='instructions' src='/global/assets/textures/equirectangular/instructions.png' crossorigin="anonymous">
+        <img id='instructions2' src='/global/assets/textures/equirectangular/walkieTalkie_Poster.png' crossorigin="anonymous">
 
         <!-- 360 -->
         <img id='link_1_360' src='/global/images/Campfire_Screen.jpg' crossorigin="anonymous">
 
         <a-asset-item id="ROOM-gltf" response-type="arraybuffer" src="/worlds/WIT_1_Kitchen/assets/models/Test2.glb"></a-asset-item>
-        <a-asset-item id="small-gltf" response-type="arraybuffer" src="/worlds/Ontario/assets/models/GLTF_ONTARIO_V000_NoNormals.glb"></a-asset-item>
+        <a-asset-item id="small-gltf" response-type="arraybuffer" src="/worlds/Ontario/assets/models/GLTF_ONTARIO_MiniSet.glb"></a-asset-item>
 
         <!-- QUEBEC ARTIFACTS -->
         <a-asset-item id="mailbox-gltf" response-type="arraybuffer" src="/worlds/WIT_1_Kitchen/assets/models/mailBox_v003.glb"></a-asset-item>
         <a-asset-item id="headphones-gltf" response-type="arraybuffer" src="/worlds/WIT_1_Kitchen/assets/models/headphones.glb"></a-asset-item>
+        <a-asset-item id="repeater-gltf" response-type="arraybuffer" src="/worlds/WIT_1_Kitchen/assets/models/GLB_Quebec_RadioRepeater.glb"></a-asset-item>
+        <a-asset-item id="jacket-gltf" response-type="arraybuffer" src="/worlds/WIT_1_Kitchen/assets/models/GLB_Jacket.glb"></a-asset-item>
 
         <!-- ONTARIO ARTIFACTS -->
         <a-asset-item id="pyrodene-gltf" response-type="arraybuffer" src="/worlds/WIT_1_Kitchen/assets/models/Pyrodene.glb"></a-asset-item>
@@ -40,6 +45,7 @@
 
 
         <a-asset-item id="walkietalkie-gltf" response-type="arraybuffer" src="/worlds/WIT_1_Kitchen/assets/models/GLB_WalkieTalkie.glb"></a-asset-item>
+        <a-asset-item id="walkietalkie2-gltf" response-type="arraybuffer" src="/worlds/WIT_1_Kitchen/assets/models/GLB_WalkieTalkie2.glb"></a-asset-item>
 
         <!-- audio -->
         <audio id="Ontario_music" src="/worlds/Ontario/assets/audio/music/deep-ambient.mp3" preload="auto" crossorigin="anonymous"></audio>
@@ -104,13 +110,17 @@
       <a-entity id="complete-light" light="type: spot; intensity: 5.61; angle: 45;  shadowBias: 0.019; penumbra: 1; color: #e1f8fe; distance: 7.05" position="3.4 2.3 0.15" rotation="-90 0 0"></a-entity>
 
       <!-- sounds -->
-      <a-entity position="0 0 -4" circles-sound="type:ambient; src:#Amb_suburb-snd; autoplay:true; loop:true; volume:0.1;" ></a-entity>
-      <a-entity circles-sound="type:music; src:#Quebec_music; autoplay:true; loop:true; volume:0.1;"></a-entity>
+      <a-entity position="0 0 -4" circles-sound="type:ambient; src:#Amb_suburb-snd; autoplay:true; loop:true; volume:0.05;" ></a-entity>
+      <a-entity circles-sound="type:music; src:#Quebec_music; autoplay:true; loop:true; volume:0.05;"></a-entity>
 
+      <!-- Image Objects -->
+      <a-entity id="ceiling"geometry="primitive: plane; width: 1.5" position=".57 4.963 0" rotation="90 90 0" scale="13 13 13" material="src:#Ceiling"></a-entity>
+      <a-entity id="HowToPlay"geometry="primitive: plane;" position="7.099 2.267 0.429" rotation="0 -90 0" scale="2 2 2" material="src:#instructions"></a-entity>
+      <a-entity id="HowToPlay2"geometry="primitive: plane;" position="7.099 2.267 -2.392" rotation="0 -90 0" scale="2 2 2" material="src:#instructions2"></a-entity>
       <!-- Hint Board Prop -->
-      <a-entity position="2.89 1.35139 0.85" scale="0.0367 1 1" rotation="0 0 35" material="color: #8c8c8c" id="Hint_Board" geometry="primitive:box">
-        <a-entity id="SetHint" geometry="primitive: plane; width: 1.5" position="0.57 0 0" rotation="0 90 0" 
-                  scale="0.66 0.993 1.0" material="src:#SetHint"></a-entity>
+      <a-entity position="2.88714 1.35139 0.84564" scale="0.0367 1 1" rotation="0 0 35" material="color: #8c8c8c" id="Hint_Board" geometry="primitive:box">
+        <a-entity id="SetHint"geometry="primitive: plane; width: 1.5" position=".57 .004 0" rotation="0 90 0" scale=".66 .993 1" material="src:#SetHint">
+        </a-entity>
       </a-entity>
       <a-entity geometry="primitive:box" position="2.619 1.316 0.868" scale="0.025 0.861 0.152" material="color: #616161"></a-entity>
 
@@ -124,12 +134,12 @@
       </a-entity>
 
       <!--MUSIC ONTARIO-->
-      <a-entity circles-sound="type:music; src:#Ontario_music; autoplay:true; loop:true; volume:0.5;"></a-entity>
+      <a-entity circles-sound="type:music; src:#Ontario_music; autoplay:true; loop:true; volume:0.05;"></a-entity>
 
       <!-- ROOM MODEL -->
       <a-entity id="room_model" gltf-model="#ROOM-gltf" postion="0 0 0" rotation="0 0 0" scale="4.5 4.5 4.5" shadow="receive:false; cast:false;">
         <a-entity id="set_model" gltf-model="#small-gltf"
-                  shadow="receive:false; cast:false;"></a-entity>
+                  position="-0.3 0.037 -0.210" rotation="0 0 0" scale="0.145 0.145 0.145" shadow="receive:true; cast:true;"></a-entity>
       </a-entity>
 
       <a-entity id="room_model_extra_pieces" shadow="receive:true; cast:true;">
@@ -149,6 +159,175 @@
                 position="0.75 1 -3.25" material="opacity:0.25;"></a-entity>
 
       <!---ADDING ARTEFACT NARRATION HERE-->
+      <!---ADDING ARTEFACT NARRATION HERE-->
+
+      <!-- HEADPHONE NARRATIONS -->
+      <a-entity id="HEADPHONE_ENG_NAR" 
+      gltf-model="/worlds/WIT_1_Kitchen/assets/models/GLB_WalkieTalkie.glb" 
+      class='interactive'
+      animation__mouseenter="property: scale; to: 5.0; startEvents: mouseenter; dur: 200"
+      animation__mouseleave="property: scale; to: 4.62; startEvents: mouseleave; dur: 200"     
+      shadow="receive:true; cast:true" 
+      rotation="-90 78.336 0" 
+      position="6.35523 1.05061 -0.6167"
+      scale="4.62 4.62 4.62"
+      sound="on: click; src: #Narr_Headphones-ENG; volume:1;"></a-entity>
+
+      <!-- CHANGE TO ORANGE WALKIE TALKIE -->
+      <a-entity id="HEADPHONE_FRE_NAR" 
+      gltf-model="/worlds/WIT_1_Kitchen/assets/models/GLB_WalkieTalkie2.glb" 
+      class='interactive' 
+      animation__mouseenter="property: scale; to: 5.0; startEvents: mouseenter; dur: 200"
+      animation__mouseleave="property: scale; to: 4.62; startEvents: mouseleave; dur: 200"  
+      shadow="receive:true; cast:true" 
+      rotation="-90 131.54 0"
+      position="6.33304 1.05061 -0.30274"
+      scale="4.62 4.62 4.62"
+      sound="on: click; src: #Narr_Headphones-FR; volume:1;"></a-entity>
+
+      <!-- Pyrodene NARRATIONS -->
+      <a-entity id="PYRODENE_ENG_NAR" 
+      gltf-model="/worlds/WIT_1_Kitchen/assets/models/GLB_WalkieTalkie.glb" 
+      class='interactive'
+      animation__mouseenter="property: scale; to: 5.0; startEvents: mouseenter; dur: 200"
+      animation__mouseleave="property: scale; to: 4.62; startEvents: mouseleave; dur: 200"
+      shadow="receive:true; cast:true"
+      rotation="-90 131.54 0"
+      position="6.333 1.05061 -2.439"
+      scale="4.62 4.62 4.62"
+      sound="on: click; src: #Narr_Pyrodene-ENG; volume:1;"></a-entity>
+
+      <!-- CHANGE TO ORANGE WALKIE TALKIE -->
+      <a-entity id="PYRODENE_FRE_NAR" 
+      gltf-model="/worlds/WIT_1_Kitchen/assets/models/GLB_WalkieTalkie2.glb" 
+      class='interactive'
+      animation__mouseenter="property: scale; to: 5.0; startEvents: mouseenter; dur: 200"
+      animation__mouseleave="property: scale; to: 4.62; startEvents: mouseleave; dur: 200"
+      shadow="receive:true; cast:true"
+      rotation=" -90 78.336 0"
+      position="6.33304 1.05061 -2.231"
+      scale="4.62 4.62 4.62" 
+      sound="on: click; src: #Narr_Pyrodene-FR; volume:1;"></a-entity>
+
+      <!-- JACKET NARRATIONS -->
+      <a-entity id="JACKET_ENG_NAR" 
+      gltf-model="/worlds/WIT_1_Kitchen/assets/models/GLB_WalkieTalkie.glb" 
+      class='interactive'
+      animation__mouseenter="property: scale; to: 5.0; startEvents: mouseenter; dur: 200"
+      animation__mouseleave="property: scale; to: 4.62; startEvents: mouseleave; dur: 200"
+      shadow="" 
+      rotation="-89.8 171.01 -78.543" 
+      position="6.21617 1.04687 0.70155" 
+      scale="4.62 4.62 4.62" 
+      sound="on: click; src:#Narr_Jacket-ENG; volume:1;"></a-entity>
+
+      <!-- CHANGE TO ORANGE WALKIE TALKIE -->
+      <a-entity id="JACKET_FR_NAR" 
+      gltf-model="/worlds/WIT_1_Kitchen/assets/models/GLB_WalkieTalkie2.glb" 
+      class='interactive'
+      animation__mouseenter="property: scale; to: 5.0; startEvents: mouseenter; dur: 200"
+      animation__mouseleave="property: scale; to: 4.62; startEvents: mouseleave; dur: 200"
+      shadow="" 
+      rotation="-89.81 171.01 -42.51633318768274" 
+      position="6.2253 1.04757 0.91348" 
+      scale="4.62 4.62 4.62" 
+      sound="on: click; src:#Narr_Jacket-FR; volume:1;"></a-entity>
+
+      <!-- MAILBOX NARRATIONS -->
+      <a-entity id="MAILBOX_ENG_NAR" 
+      gltf-model="/worlds/WIT_1_Kitchen/assets/models/GLB_WalkieTalkie.glb" 
+      class="interactive"
+      animation__mouseenter="property: scale; to: 5.0; startEvents: mouseenter; dur: 200"
+      animation__mouseleave="property: scale; to: 4.62; startEvents: mouseleave; dur: 200"
+      shadow="" 
+      rotation="-90 170.76 0" 
+      position="3.67009 0.45621 -3.60149" 
+      scale="4.62 4.62 4.62" 
+      sound="on: click; src:#Narr_Mailbox-ENG; volume:1;"></a-entity>
+
+     <!-- CHANGE TO ORANGE WALKIE TALKIE -->
+      <a-entity id="MAILBOX_FR_NAR"
+      gltf-model="/worlds/WIT_1_Kitchen/assets/models/GLB_WalkieTalkie2.glb" 
+      class="interactive" 
+      animation__mouseenter="property: scale; to: 5.0; startEvents: mouseenter; dur: 200"
+      animation__mouseleave="property: scale; to: 4.62; startEvents: mouseleave; dur: 200"
+      shadow="" 
+      rotation="-89.99 133.65 0" 
+      position="4.03986 0.45621 -3.54138" 
+      scale="4.62 4.62 4.62" 
+      sound="on: click; src:#Narr_Mailbox-FR; volume:1;"></a-entity>
+
+      <!-- FLAMETHROWER NARRATIONS -->
+      <a-entity id="FLAMETHROWER_ENG_NAR" 
+      gltf-model="/worlds/WIT_1_Kitchen/assets/models/GLB_WalkieTalkie.glb" 
+      class="interactive"
+      animation__mouseenter="property: scale; to: 5.0; startEvents: mouseenter; dur: 200"
+      animation__mouseleave="property: scale; to: 4.62; startEvents: mouseleave; dur: 200"
+      shadow="" 
+      rotation="-90 170.76 0" 
+      position="4.740 0.45621 -3.60149" 
+      scale="4.62 4.62 4.62" 
+      sound="on: click; src:#Narr_Flamethrower-ENG; volume:1;"></a-entity>
+
+     <!-- CHANGE TO ORANGE WALKIE TALKIE -->
+      <a-entity id="FLAMETHROWER_FR_NAR" 
+      gltf-model="/worlds/WIT_1_Kitchen/assets/models/GLB_WalkieTalkie2.glb" 
+      class="interactive" 
+      animation__mouseenter="property: scale; to: 5.0; startEvents: mouseenter; dur: 200"
+      animation__mouseleave="property: scale; to: 4.62; startEvents: mouseleave; dur: 200"
+      shadow="" 
+      rotation="-89.99 133.65 0" 
+      position="5.095 0.45621 -3.54138"
+      scale="4.62 4.62 4.62" 
+      sound="on: click; src:#Narr_Flamethrower-FR; volume:1;"></a-entity>
+
+      <!-- CHEM BLEDNER NARRATIONS -->
+      <a-entity id="CHEMBLENDER_ENG_NAR" 
+      gltf-model="/worlds/WIT_1_Kitchen/assets/models/GLB_WalkieTalkie.glb" 
+      class="interactive"
+      animation__mouseenter="property: scale; to: 5.0; startEvents: mouseenter; dur: 200"
+      animation__mouseleave="property: scale; to: 4.62; startEvents: mouseleave; dur: 200"
+      shadow="" 
+      rotation="-90 170.76 0" 
+      position="5.532 0.45621 -3.60149" 
+      scale="4.62 4.62 4.62" 
+      sound="on: click; src:#Narr_Chemblender-ENG; volume:1;"></a-entity>
+
+     <!-- CHANGE TO ORANGE WALKIE TALKIE -->
+      <a-entity id="CHEMBLENDER_FR_NAR" 
+      gltf-model="/worlds/WIT_1_Kitchen/assets/models/GLB_WalkieTalkie2.glb" 
+      class="interactive" 
+      animation__mouseenter="property: scale; to: 5.0; startEvents: mouseenter; dur: 200"
+      animation__mouseleave="property: scale; to: 4.62; startEvents: mouseleave; dur: 200"
+      shadow="" 
+      rotation="-89.99 133.65 0" 
+      position="5.904 0.45621 -3.54138" 
+      scale="4.62 4.62 4.62" 
+      sound="on: click; src:#Narr_Chemblender-FR; volume:1;"></a-entity>
+
+      <!-- RADIO REPEATER NARRATIONS -->
+      <a-entity id="REPEATER_ENG_NAR" 
+      gltf-model="/worlds/WIT_1_Kitchen/assets/models/GLB_WalkieTalkie.glb" 
+      class="interactive"
+      animation__mouseenter="property: scale; to: 5.0; startEvents: mouseenter; dur: 200"
+      animation__mouseleave="property: scale; to: 4.62; startEvents: mouseleave; dur: 200"
+      shadow="" 
+      rotation="-90 170.76 0" 
+      position="2.721 0.456 -3.46586" 
+      scale="4.62 4.62 4.62" 
+      sound="on: click; src:#Narr_Radio-ENG; volume:1;"></a-entity>
+
+     <!-- CHANGE TO ORANGE WALKIE TALKIE -->
+      <a-entity id="REPEATER_FR_NAR" 
+      gltf-model="/worlds/WIT_1_Kitchen/assets/models/GLB_WalkieTalkie2.glb" 
+      class="interactive" 
+      animation__mouseenter="property: scale; to: 5.0; startEvents: mouseenter; dur: 200"
+      animation__mouseleave="property: scale; to: 4.62; startEvents: mouseleave; dur: 200"
+      shadow="" 
+      rotation="-89.99 133.65 0" 
+      position="3.08777 0.456 -3.5228" 
+      scale="4.62 4.62 4.62" 
+      sound="on: click; src:#Narr_Radio-FR; volume:1;"></a-entity>
       
 
       <!-- ONTARIO PICKUPABLE OBJECTS -->
@@ -201,16 +380,16 @@
                                   label_text:Headphones;"
                 grnd-placeable="dropRot:0 0 90"></a-entity>
 
-      <a-entity class="Artefact-Jacket" gltf-model="#headphones-gltf"
-                position="6.631 1 1.563" scale="8 8 8" rotation="0 0 90"
-                circles-sphere-env-map="src:#skyMap"
-                circles-artefact="inspectScale:10 10 10; textRotationY:0.0; inspectRotation:0 0 0;
+      <a-entity class="Artefact-Jacket" gltf-model="#jacket-gltf"
+                position="6.631 1.022 1.563" scale=".005 .005 .005"rotation="-90 0 -90"
+                circles-artefact="inspectScale:.005 .005 .005; textRotationY:0.0; inspectRotation:0 0 0;
                                   label_offset:0.0 0.5 0.0; arrow_position:down;
                                   title:CBC Jacket;
                                   descriptionLookAt:true;
                                   description: This is an overcoat worn by male hosts at the CBC Pavillion’s International and Universal Exposition , which was held in Montreal, Quebec 1967 . The jacket was manufactured by Createbrooke Clothiers incorporated.;
                                   label_text:Jacket;"
-                grnd-placeable="dropRot:0 0 90"></a-entity>
+                grnd-placeable="dropRot:-90 0 -90">
+      </a-entity>
 
 
       <a-entity class="Artefact-Mailbox" gltf-model="#mailbox-gltf"
@@ -225,9 +404,8 @@
                                   label_text:Mailbox;"
                 grnd-placeable></a-entity>     
 
-      <a-entity class="Artefact-Repeater" gltf-model="#mailbox-gltf"
-                position="2.768 0.328 -4.149" scale="0.28 0.28 0.28" rotation="0 0 0"
-                circles-sphere-env-map="src:#skyMap"
+      <a-entity class="Artefact-Repeater" gltf-model="#repeater-gltf"
+                position="2.768 0.328 -4.149" scale="0.2 0.2 0.2" rotation="0 0 0"
                 circles-artefact="inspectScale:0.3 0.3 0.3; textRotationY:0.0;
                                   inspectRotation:0 -90 0; inspectPosition:0 -0.5 0;
                                   label_offset:0.0 1.8 0.0; arrow_position:down;
