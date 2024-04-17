@@ -3,7 +3,7 @@
 function spawnLab(position){
     let complete = document.createElement('a-entity');
 
-    complete.setAttribute('position',position);
+    complete.setAttribute('position', position);
     complete.setAttribute('rotation','0 0 0');
     complete.setAttribute('id','portal');
     complete.setAttribute('circles-portal','title_text:Lab; link_url:/w/BasicStart');
@@ -64,7 +64,10 @@ function check_ingenium(){
                 {
                     console.log('Ingenium set is looking good');
 
-                    spawnQB();
+                    //give user access to the next levels
+                    spawnQB('-4.8 1.5 3');
+                    spawnON('-3.5 1.5 3');
+
                     document.querySelector('a-scene').setAttribute('background','color:green;');
 
                 }
@@ -108,8 +111,8 @@ function check_quebec(){
             ((obj2[0].getAttribute('position').y).toFixed(2) === (obj2[1].getAttribute('position').y).toFixed(2)) &&
             ((obj2[0].getAttribute('position').z).toFixed(2) === (obj2[1].getAttribute('position').z).toFixed(2)))
         {
-            console.log('Quebec set is looking good');k
-            spawnLab();
+            console.log('Quebec set is looking good');
+            spawnLab('-4.3 1 3.5');
         }
         else{
                 console.log('WRONG');
