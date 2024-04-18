@@ -4,8 +4,7 @@
 AFRAME.registerComponent('grnd-placeable', {
     schema: {
         initialPos:{type:'string'},
-        dropRot:{type:'string', default:'0 0.1 0'},
-        initLoad:{type:'boolean', default:'false'}
+        dropRot:{type:'string', default:'0 0.1 0'}
     },
     init:function(){
         const CONTEXT_AF = this;
@@ -17,13 +16,9 @@ AFRAME.registerComponent('grnd-placeable', {
         //mats (red, green, blue)
         let mats = document.querySelectorAll('.mat');
         
-        if(CONTEXT_AF.data.initLoad === false){
-            CONTEXT_AF.data.initialPos = String(CONTEXT_AF.el.object3D.position.x) + ' ' + String(CONTEXT_AF.el.object3D.position.y) + ' ' + String(CONTEXT_AF.el.object3D.position.z);
-            console.log("initial pos is: ", CONTEXT_AF.data.initialPos);
-            CONTEXT_AF.data.initLoad = true;
-        }
+        CONTEXT_AF.data.initialPos = String(CONTEXT_AF.el.object3D.position.x) + ' ' + String(CONTEXT_AF.el.object3D.position.y) + ' ' + String(CONTEXT_AF.el.object3D.position.z);
+        console.log("initial pos is: ", CONTEXT_AF.data.initialPos);
         
-
         if (CONTEXT_AF.el.hasAttribute('circles-artefact') === false) {
             CONTEXT_AF.el.setAttribute('circles-artefact', {});
         }
@@ -38,7 +33,7 @@ AFRAME.registerComponent('grnd-placeable', {
             //if user is on a teleport point, release sends the object to the corresponding position
             if( (playerPos.x === greens[0].object3D.position.x) &&
                 (playerPos.z === greens[0].object3D.position.z))
-                { CONTEXT_AF.el.setAttribute('circles-artefact', {origPosition: mats[0].object3D.position}); } //object goes on first mat
+            { CONTEXT_AF.el.setAttribute('circles-artefact', {origPosition: mats[0].object3D.position}); } //object goes on first mat
 
             else if((playerPos.x === greens[1].object3D.position.x) &&
                     (playerPos.z === greens[1].object3D.position.z))
